@@ -1,0 +1,187 @@
+# Project information
+site_name: Plants&Python
+site_url: https://danchitwood.github.io/plants_and_python/
+site_author: Dan Chitwood
+site_description: Learn to code in Python / aprender a programar en python
+
+# Repository
+repo_name: DanChitwood/plants_and_python
+repo_url: https://github.com/DanChitwood/plants_and_python
+
+# Copyright
+copyright: Copyright &copy; 2025 Dan Chitwood, Alejandra Rougon-Cardoso, Robert VanBuren
+
+# Configuration
+theme:
+  name: material
+  features:
+    - announce.dismiss
+    #- content.action.edit
+    #- content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+  font: 
+    text: Roboto
+    code: Red Hat Mono
+  logo: assets/icon.png
+  favicon: assets/icon.png
+  icon:
+    repo: fontawesome/brands/git-alt
+
+# Page tree
+nav:
+  - Home | Inicio: 
+    - Welcome | Bienvenid@: index.md
+    - How to cite: 00_how_to_cite.md
+  - Getting started | Empezando:
+    - Installation | Instalación: 00_Installing_Anaconda.md
+    - Coding cells | celdas de código: 02_Coding_cells.md
+    - Markdown cells | celdas de markdown: 04_Markdown_cells.md
+  - Quick start: OAXACA_workshop.md
+  - Lessons in English:
+    - 1. Variables, Lists & Indexing:
+      - Cover illustration: 1.00_Cover_image_1.md
+      - 1.0 Variables: 1.0_Variables.md
+      - 1.1 Functions: 1.1_Functions.md
+      - 1.2 Indexing: 1.2_Indexing.md
+      - 1.3 Lists: 1.3_Lists.md
+      - 1.4 Indexing list elements: 1.4_Indexing_List_Elements.md
+      - 1.5 Modifying lists: 1.5_Modifying_Lists.md
+      - 1.6 List of lists: 1.6_List_of_Lists.md
+      - 1.7 Slicing: 1.7_Slicing.md
+      - 1.8 Data types: 1.8_Data_Types.md
+    - 2. Visualizing Data with Matplotlib:
+      - Cover illustration: 2.00_Cover_image_2.md
+      - 2.0 Modules: 2.0_Modules.md
+      - 2.1 Plots: 2.1_Plots.md
+      - 2.2 Shape, size, and color: 2.2_Shape_Size_and_Color.md
+      - 2.3 Legends: 2.3_Legends.md
+      - 2.4 Subplots: 2.4_Subplots.md
+    - 3. Loops & the Golden Angle:
+      - Cover illustration: 3.00_Cover_image_3.md
+      - 3.0 Range function: 3.0_Range_Function.md
+      - 3.1 For loops: 3.1_For_Loops.md
+      - 3.2 Counters: 3.2_Counters.md
+      - 3.3 Using lists and loops: 3.3_Using_Lists_and_Loops.md
+      - 3.4 Calculating Fibonacci: 3.4_Calculating_Fibonacci.md
+      - 3.5 While loops: 3.5_While_Loops.md
+    - 4. Data Analysis with Pandas:
+      - Cover illustration: 4.00_Cover_image_4.md
+      - 4.0 Reading in data: 4.0_Reading_in_Data.md
+      - 4.1 Head and tail: 4.1_Head_and_Tail.md
+      - 4.2 Selecting columns: 4.2_Selecting_Columns.md
+      - 4.3 Descriptive statistics: 4.3_Descriptive_Statistics.md
+      - 4.4 Masks: 4.4_Masks.md
+      - 4.5 Using iloc: 4.5_Using_iloc.md
+      - 4.6 Seaborn: 4.6_Seaborn.md
+    - 5. UNIX command line:
+      - Cover illustration: 5.00_Cover_image_5.md
+      - 5.0 Introduction to command line: 5.0_Introduction_to_Command_Line.md
+      - 5.1 Virtual terminal: 5.1_TheVirtual_Terminal.md
+      - 5.2 Exploring folders: 5.2_Exploring_Folders.md
+      - 5.3 Working with files: 5.3_Working_with_Files.md
+      - 5.4 Options and arguments: 5.4_Options_and_Arguments.md
+      - 5.5 Copy, move & remove files: 5.5_Copy_Move_and_Remove_Files.md
+    - 6. UNIX commands for data mining: 
+      - 6.0 edit, sort, cut & grep: 6.0_Edit_Sort_Cut_grep.md
+      - 6.1 Word count, pipelines & permissions: 6.1_Word_Count_Pipelines_Permissions.md
+      - 6.2 Biological data formats: 6.2_Biological_Data_Formats.md
+    - 7. Scripting with bash: 
+      - 7.0 Working remotely: 7.0_WorkingRemotely.md
+      - 7.1 Scripting with bash: 7.1_Scripting_with_bash.md
+      - 7.2 Summary of commands: 7.2_Summary_of_Commands.md
+    - 8. Genomics and Biopython: 
+      - 8.0 Intro to plant genomics: 8.0_Intro_to_Genomics_and_Biopython.md
+      - 8.1 Using the HPCC: 8.1_HPCC.md
+    - 9. Comparative genomics: 
+      - 9.0 Comparative genomics: 9.0_Comp_Genomics.md
+    - 10. RNASeq analysis: 
+      - 10.0 Short read analysis: 10.0_RNAseq_analysis.md
+    - 11. Variant discovery: 
+      - 11.0 Identifying variants: 11.0_Variant_Discovery.md
+  - Lecciones en español:
+    - 1. Variables, listas y indexación:
+      - Illustración de portada: ES_1.00_Ilustracion_de_portada_1.md
+      - 1.0 Variables: ES_1.0_Variables.md
+      - 1.1 Funciones: ES_1.1_Funciones.md
+      - 1.2 Indexación: ES_1.2_Indexacion.md
+      - 1.3 Listas: ES_1.3_Listas.md
+      - 1.4 Indexando los elementos de una lista: ES_1.4_Indexando_los_elementos_de_una_lista.md
+      - 1.5 Modificando listas: ES_1.5_Modificando_listas.md
+      - 1.6 Lista de listas: ES_1.6_Lista_de_listas.md
+      - 1.7 Rebanar: ES_1.7_Rebanar.md
+      - 1.8 Tipos de datos: ES_1.8_Tipos_de_datos.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+
+extra:
+  social:
+    - icon: simple/youtube
+      link: https://www.youtube.com/@DanChitwood
+    - icon: simple/python
+      link: https://plantsandpython.github.io/PlantsAndPython/00_Opening_page.html
+
+
