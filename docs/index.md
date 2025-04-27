@@ -1,8 +1,3 @@
----
-title: Welcome to / Bienvenid@ a Plants&Python 
-description: a series of lessons in coding, plant biology, computation, and bioinformatics / una serie de lecciones de programación, biología vegetal, cómputo, y bioinformática
----
-
 # Plants&Python :sunflower: :snake: :computer:
 ***:flag_us: a series of lessons in coding, plant biology, computation, and bioinformatics***  
 ***:flag_mx: una serie de lecciones de programación, biología vegetal, cómputo, y bioinformática***
