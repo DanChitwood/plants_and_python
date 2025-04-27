@@ -2,7 +2,7 @@
 site_name: Plants&Python
 site_url: https://danchitwood.github.io/plants_and_python/
 site_author: Dan Chitwood
-site_description: a series of lessons in coding, plant biology, computation, and bioinformatics / una serie de lecciones de programación, biología vegetal, cómputo, y bioinformática
+site_description: a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal
 
 # Repository
 repo_name: DanChitwood/plants_and_python
@@ -73,8 +73,8 @@ theme:
 
 # Page tree
 nav:
-  - Home | Inicio: 
-    - Welcome | Bienvenid@: index.md
+  - Welcome | Bienvenid@: 
+    - Home | Inicio: index.md
   - Getting started | Empezando:
     - Installation | Instalación: 00_Installing_Anaconda.md
     - Coding cells | celdas de código: 02_Coding_cells.md
@@ -194,6 +194,9 @@ nav:
       - 7.1 Programando con bash: ES_7.1_Programando_con_Bash.md
       - 7.2 Resumen de comandos: ES_7.2_Resumen_de_comandos.md
   - Class publications: 00_class_publications.md
+
+plugins:
+  - social
 
 markdown_extensions:
   - attr_list
