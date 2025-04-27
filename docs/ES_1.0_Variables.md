@@ -1,5 +1,5 @@
 # 1.0 Variables
-# Variables, funciones, listas e índices
+## Variables, funciones, listas e índices
 ______
 
 En nuestro primer video tutorial, vamos a aprender los fundamentos de Python. Aprenderás a crear una variable. Usarás funciones para procesar variables y crear salidas (outputs). Y aprenderás sobre la indexación, una forma de llevar un registro de los datos, acceder a ellos, modificarlos y utilizarlos.
@@ -8,7 +8,7 @@ Los objetivos de aprendizaje que se cubren en el video tutorial se describen a c
 
 Hay objetivos de aprendizaje tanto para Python como para las plantas:
 
-### 🐍 Objetivos de aprendizaje de Python
+## 🐍 Objetivos de aprendizaje de Python
 
 - **¿Cómo crear una variable?** (*1:15*)
     - La variable no tiene comillas
@@ -34,7 +34,7 @@ Hay objetivos de aprendizaje tanto para Python como para las plantas:
     - Los elementos dentro de una lista de listas pueden ser indexados usando corchetes dobles
 
 
-### 🌻 Objetivos de aprendizaje en biología vegetal
+## 🌻 Objetivos de aprendizaje en biología vegetal
 
 - **Las plantas son esenciales para la vida humana** (*16:46*)
     - Las plantas nos alimentan, nos visten, nos dan cobijo, nos medican y nos inspiran

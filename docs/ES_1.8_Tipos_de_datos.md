@@ -129,10 +129,6 @@ type(str_golden_ang)
 
     137.50776405003785
 
-
-
-
-
     str
 
 
@@ -149,10 +145,6 @@ type(float(str_golden_ang))
 ```
 
     137.50776405003785
-
-
-
-
 
     float
 

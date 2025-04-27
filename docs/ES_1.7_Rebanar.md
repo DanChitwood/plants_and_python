@@ -1,5 +1,5 @@
 # 1.7 Rebanar
-# Rebanar y tipos de datos
+## Rebanar y tipos de datos
 ____
 
 Acabas de aprender sobre listas e indexación. Pero la mayoría de los ejemplos eran con cadenas y nombres. ¿Qué pasa con los números?
@@ -8,7 +8,7 @@ En el siguiente video estarás usando listas con números. También aprenderás 
 
 Los objetivos de aprendizaje para este vídeo son los siguientes:
 
-### 🐍 Objetivos de aprendizaje de Python
+## 🐍 Objetivos de aprendizaje de Python
 
 - Usar números con listas (*1:04*)
 - El rebanado puede acceder a elementos de la lista con un inicio, un final y un paso
@@ -17,7 +17,7 @@ Los objetivos de aprendizaje para este vídeo son los siguientes:
 - Cómo comprobar qué tipo de datos está utilizando con type()
 - Puedes convertir diferentes tipos entre sí usando str(), int(), float()
 
-### 🌻 Objetivos de aprendizaje en biología vegetal
+## 🌻 Objetivos de aprendizaje en biología vegetal
 - El ángulo de oro es un número irracional, derivado de la secuencia de Fibonacci, que subyace a la disposición en espiral de las hojas y otros órganos (filotaxia) en las plantas (*3:16*)
 
 ## Usar números con listas y cortar
