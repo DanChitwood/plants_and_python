@@ -50,15 +50,15 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: teal
+      accent: deep orange
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
-      accent: indigo
+      primary: teal
+      accent: deep orange
       toggle:
         icon: material/toggle-switch-off
         name: Switch to system preference
@@ -194,6 +194,9 @@ nav:
       - 7.1 Programando con bash: ES_7.1_Programando_con_Bash.md
       - 7.2 Resumen de comandos: ES_7.2_Resumen_de_comandos.md
   - Class publications: 00_class_publications.md
+
+plugins:
+  - social
 
 markdown_extensions:
   - attr_list
