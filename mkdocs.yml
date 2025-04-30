@@ -102,6 +102,8 @@ nav:
       - 2.2 Shape, size, and color: 2.2_Shape_Size_and_Color.md
       - 2.3 Legends: 2.3_Legends.md
       - 2.4 Subplots: 2.4_Subplots.md
+      - Practice: 2_practice.md
+      - Leaf & sunflower shapes: 2_activity.md
     - 3. Loops & the Golden Angle:
       - Cover illustration: 3.00_Cover_image_3.md
       - 3.0 Range function: 3.0_Range_Function.md
@@ -110,6 +112,8 @@ nav:
       - 3.3 Using lists and loops: 3.3_Using_Lists_and_Loops.md
       - 3.4 Calculating Fibonacci: 3.4_Calculating_Fibonacci.md
       - 3.5 While loops: 3.5_While_Loops.md
+      - Practice: 3_practice.md
+      - Modeling sunflowers: 3_activity.md
     - 4. Data Analysis with Pandas:
       - Cover illustration: 4.00_Cover_image_4.md
       - 4.0 Reading in data: 4.0_Reading_in_Data.md
@@ -119,6 +123,8 @@ nav:
       - 4.4 Masks: 4.4_Masks.md
       - 4.5 Using iloc: 4.5_Using_iloc.md
       - 4.6 Seaborn: 4.6_Seaborn.md
+      - Practice: 4_practice.md
+      - Grapes in a warming world: 4_activity.md
     - 5. UNIX command line:
       - Cover illustration: 5.00_Cover_image_5.md
       - 5.0 Introduction to command line: 5.0_Introduction_to_Command_Line.md
@@ -165,6 +171,8 @@ nav:
       - 2.2 Forma, tamaño y color: ES_2.2_Forma_tamano_y_color.md
       - 2.3 Leyendas: ES_2.3_Leyendas.md
       - 2.4 Subgráficos: ES_2.4_Subgraficos.md
+      - Práctica: ES_2_practice.md
+      - Las formas de las hojas y girasoles: ES_2_activity.md
     - 3. Loops y el ángulo dorado:
       - Ilustración de portada: ES_3.00_Ilustracion_de_portada_3.md
       - 3.0 La función range: ES_3.0_La_funcion_range.md
@@ -173,6 +181,8 @@ nav:
       - 3.3 Usando listas y loops: ES_3.3_Usando_listas_y_loops.md
       - 3.4 Calcular Fibonacci: ES_3.4_Calcular_Fibonacci.md
       - 3.5 Loops while: ES_3.5_Loops_while.md
+      - Práctica: ES_3_practice.md
+      - Cómo construir un girasol: ES_3_activity.md
     - 4. Análisis de datos con pandas:
       - Ilustración de portada: ES_4.00_Ilustracion_de_portada_4.md
       - 4.0 Leyendo en data: ES_4.0_Leyendo_en_data.md
@@ -182,6 +192,8 @@ nav:
       - 4.4 Enmascaramiento: ES_4.4_Enmascaramiento.md
       - 4.5 Usando iloc: ES_4.5_Usando_iloc.md
       - 4.6 Seaborn: ES_4.6_Seaborn.md
+      - Práctica: ES_4_practice.md
+      - Vides en un mundo que se calienta: ES_4_activity.md
     - 5. Línea de comandos de UNIX:
       - Ilustración de portada: ES_5.00_Ilustracion_de_portada_5.md
       - 5.0 Introducción a la línea de comandos: ES_5.0_IntroduccionLineaDeComandos.md
