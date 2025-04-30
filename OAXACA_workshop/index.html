@@ -1,0 +1,5334 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal">
+      
+      
+        <meta name="author" content="Dan Chitwood">
+      
+      
+        <link rel="canonical" href="https://danchitwood.github.io/plants_and_python/OAXACA_workshop/">
+      
+      
+        <link rel="prev" href="../04_Markdown_cells/">
+      
+      
+        <link rel="next" href="../1.00_Cover_image_1/">
+      
+      
+      <link rel="icon" href="../assets/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Quick start - Plants&Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Quick start - Plants&Python" >
+      
+        <meta  property="og:description"  content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal" >
+      
+        <meta  property="og:image"  content="https://danchitwood.github.io/plants_and_python/assets/images/social/OAXACA_workshop.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://danchitwood.github.io/plants_and_python/OAXACA_workshop/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Quick start - Plants&Python" >
+      
+        <meta  name="twitter:description"  content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal" >
+      
+        <meta  name="twitter:image"  content="https://danchitwood.github.io/plants_and_python/assets/images/social/OAXACA_workshop.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-bienvenid-a-plantspython" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Plants&amp;Python" class="md-header__button md-logo" aria-label="Plants&Python" data-md-component="logo">
+      
+  <img src="../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plants&Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quick start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DanChitwood/plants_and_python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DanChitwood/plants_and_python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Welcome | Bienvenid@
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_Installing_Anaconda/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started | Empezando
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1.00_Cover_image_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lessons in English
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ES_1.00_Ilustracion_de_portada_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lecciones en español
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00_class_publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Class publications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Plants&amp;Python" class="md-nav__button md-logo" aria-label="Plants&Python" data-md-component="logo">
+      
+  <img src="../assets/icon.png" alt="logo">
+
+    </a>
+    Plants&Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DanChitwood/plants_and_python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DanChitwood/plants_and_python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Welcome | Bienvenid@
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Welcome | Bienvenid@
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting started | Empezando
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started | Empezando
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_Installing_Anaconda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation | Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Coding_cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding cells | celdas de código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_Markdown_cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown cells | celdas de markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-for-the-workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation for the workshop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-jupyter-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Jupyter notebooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-and-your-first-python-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables and your first Python code!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists-and-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists and indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-build-a-sunflower-part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to build a sunflower, Part 1:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to build a sunflower, Part 1:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-the-golden-angle-using-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculating the golden angle using loops
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-build-a-sunflower-part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to build a sunflower, Part 2:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to build a sunflower, Part 2:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-and-plotting-our-sunflower" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building and plotting our sunflower
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-build-a-sunflower-part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to build a sunflower, Part 3:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to build a sunflower, Part 3:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complex-code-and-going-forward-in-your-coding-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex code and going forward in your coding journey!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lessons in English
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons in English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Variables, Lists & Indexing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            1. Variables, Lists & Indexing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.00_Cover_image_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1_Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1 Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2_Indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2 Indexing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3 Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4_Indexing_List_Elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4 Indexing list elements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5_Modifying_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5 Modifying lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6_List_of_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6 List of lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.7_Slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7 Slicing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.8_Data_Types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8 Data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plants & climate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Visualizing Data with Matplotlib
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. Visualizing Data with Matplotlib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.00_Cover_image_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0_Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1_Plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Plots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2_Shape_Size_and_Color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 Shape, size, and color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3_Legends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 Legends
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4_Subplots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subplots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Leaf & sunflower shapes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Loops & the Golden Angle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. Loops & the Golden Angle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.00_Cover_image_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.0_Range_Function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0 Range function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1_For_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1 For loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2_Counters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2 Counters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3_Using_Lists_and_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3 Using lists and loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4_Calculating_Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4 Calculating Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.5_While_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5 While loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modeling sunflowers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Data Analysis with Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Data Analysis with Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.00_Cover_image_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.0_Reading_in_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0 Reading in data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1_Head_and_Tail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1 Head and tail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2_Selecting_Columns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2 Selecting columns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3_Descriptive_Statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3 Descriptive statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4_Masks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4 Masks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5_Using_iloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5 Using iloc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6_Seaborn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6 Seaborn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grapes in a warming world
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    5. UNIX command line
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            5. UNIX command line
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.00_Cover_image_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0_Introduction_to_Command_Line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.0 Introduction to command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1_TheVirtual_Terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 Virtual terminal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2_Exploring_Folders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Exploring folders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3_Working_with_Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3 Working with files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4_Options_and_Arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4 Options and arguments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5_Copy_Move_and_Remove_Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5 Copy, move & remove files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    6. UNIX commands for data mining
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            6. UNIX commands for data mining
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.0_Edit_Sort_Cut_grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.0 edit, sort, cut & grep
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.1_Word_Count_Pipelines_Permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.1 Word count, pipelines & permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.2_Biological_Data_Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.2 Biological data formats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    7. Scripting with bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            7. Scripting with bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.0_WorkingRemotely/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.0 Working remotely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.1_Scripting_with_bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1 Scripting with bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.2_Summary_of_Commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2 Summary of commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    8. Genomics and Biopython
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            8. Genomics and Biopython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.0_Intro_to_Genomics_and_Biopython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8.0 Intro to plant genomics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.1_HPCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8.1 Using the HPCC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    9. Comparative genomics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            9. Comparative genomics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.0_Comp_Genomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9.0 Comparative genomics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    10. RNASeq analysis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            10. RNASeq analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.0_RNAseq_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10.0 Short read analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    11. Variant discovery
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            11. Variant discovery
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.0_Variant_Discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11.0 Identifying variants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lecciones en español
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Lecciones en español
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Variables, listas y indexación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            1. Variables, listas y indexación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.00_Ilustracion_de_portada_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.0_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.1_Funciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1 Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.2_Indexacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2 Indexación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.3_Listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3 Listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.4_Indexando_los_elementos_de_una_lista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4 Indexando los elementos de una lista
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.5_Modificando_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5 Modificando listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.6_Lista_de_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6 Lista de listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.7_Rebanar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7 Rebanar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.8_Tipos_de_datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8 Tipos de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las plantas y el clima
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Visualización de datos con matplotlib
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. Visualización de datos con matplotlib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.00_Ilustracion_de_portada_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.0_Modulos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.1_Graficos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Gráficos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.2_Forma_tamano_y_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 Forma, tamaño y color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.3_Leyendas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 Leyendas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.4_Subgraficos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subgráficos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las formas de las hojas y girasoles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Loops y el ángulo dorado
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. Loops y el ángulo dorado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.00_Ilustracion_de_portada_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.0_La_funcion_range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0 La función range
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.1_Loops_for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1 Loops for
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.2_Contadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2 Contadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.3_Usando_listas_y_loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3 Usando listas y loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.4_Calcular_Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4 Calcular Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.5_Loops_while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5 Loops while
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cómo construir un girasol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Análisis de datos con pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Análisis de datos con pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.00_Ilustracion_de_portada_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.0_Leyendo_en_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0 Leyendo en data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.1_Head_y_tail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1 Head y tail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.2_Seleccionando_columnas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2 Seleccionando columnas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.3_Estadisticas_descriptivas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3 Estadísticas descriptivas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.4_Enmascaramiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4 Enmascaramiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.5_Usando_iloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5 Usando iloc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.6_Seaborn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6 Seaborn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vides en un mundo que se calienta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    5. Línea de comandos de UNIX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            5. Línea de comandos de UNIX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.00_Ilustracion_de_portada_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.0_IntroduccionLineaDeComandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.0 Introducción a la línea de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.1_LaTerminal_Virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 Terminal virtual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.2_ExplorandoDirectorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Explorando directorios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.3_Trabajando_con_archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3 Trabajando con archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.4_Opciones_y_Argumentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4 Opciones y argumentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.5_Copiar_Mover_Eliminar_Archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5 Copiar, mover y eliminar archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    6.0 Minería de datos en la línea de comandos de UNIX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            6.0 Minería de datos en la línea de comandos de UNIX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.0_Editar_Ordentar_Cortar_grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.0 Editar, ordenar, cortar y grep
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.1_Contar_Palabras_Tuberias_Permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.1 Contar palabras, tuberías y permisos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.2_Formatos_Biologicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.2 Formatos de datos biológicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    7.0 Programmando con bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            7.0 Programmando con bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.0_Trabajando_de_manera_remota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.0 Trabajando de manera remota
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.1_Programando_con_Bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1 Programando con bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.2_Resumen_de_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2 Resumen de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_class_publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class publications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="welcome-to-bienvenid-a-plantspython">Welcome to / Bienvenid@ a Plants&amp;Python 🪴🐍🪴</h1>
+<p>This Quick Start guide was originally developed for a workshop held during the <a href="https://smbplant.quimica.unam.mx/">XX Sociedad Mexicana de Bioquímica National Plant Biochemistry and Molecular Biology Congress</a> in Oaxaca, México, 16-20 October 2023.</p>
+<p>The workshop will be held before the meeting starts the first day.<br />
+<strong>When:</strong> Monday 16 October 2023, at 11am<br />
+<strong>Where:</strong> <a href="https://fahho.mx/filiales-fahho/centro-cultural-san-pablo/">Centro Cultural San Pablo</a>, Hidalgo 907 e Independencia 904, Centro, Oaxaca, C.P. 68000 </p>
+<p>Dr. Dan Chitwood (Michigan State University) and Dr. Alejandra Rougon (ENES-León, UNAM) will teach the workshop. We will use the <a href="https://plantsandpython.github.io/PlantsAndPython">Plants&amp;Python</a> learning materials.</p>
+<p><a href="https://plantsandpython.github.io/PlantsAndPython">Plants&amp;Python</a> is available in English and Spanish. It is designed to provide an introduction to coding principles in the Python coding language. If you have no coding experience, then Plants&amp;Python is meant for you!</p>
+<p>Please watch the <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/01_Welcome_Bienvenido/00_Welcome.html">welcome video</a>, por favor mira el <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/01_Welcome_Bienvenido/01_Bienvenido.html">vídeo de bienvenida</a>.</p>
+<p><img alt="parastichies.gif" src="../assets/quickstart/parastichies.gif" /></p>
+<h2 id="preparation-for-the-workshop">Preparation for the workshop</h2>
+<p>Before the workshop, try to download Anaconda, which includes Python, Jupyter notebooks, and Python modules we will use. Select your operating system from this <a href="https://docs.anaconda.com/free/anaconda/install/">link</a> and follow the instructions. You can also watch a video to install Anaconda, in <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/02_Getting_started_Empezando/00_Installing_Anaconda.html">English</a> y en <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/02_Getting_started_Empezando/01_Instalar_Anaconda.html">español</a>.</p>
+<p>If you can not download Anaconda or don't have the time, no worries! You can attend the workshop and watch and use the <a href="https://plantsandpython.github.io/PlantsAndPython">Plants&amp;Python</a> materials on your own time.</p>
+<h2 id="using-jupyter-notebooks">Using Jupyter notebooks</h2>
+<p>The words you are reading and the code you see are all in a Jupyter notebook! Jupyter notebooks are a file that allow for coding together with text (called <strong><em>markdown</em></strong>) and embedded pictures and videos. They are great for teaching and education as well as reproducible research using Python.</p>
+<p>If you have installed Anaconda, you can open this Jupyter notebook and code along during the workshop! Either type <code>jupyter notebook</code> in the terminal application on your computer, or select the Anaconda navigator and click <code>launch Jupyter notebook</code>. Jupyter will open in your internet browser, and you can navigate to the folder where you have stored this file, <code>Oaxaca_workshop.ipynb</code>, and open it. Follow the instructions here, in <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/02_Getting_started_Empezando/00_Installing_Anaconda.html">English</a> or en <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/02_Getting_started_Empezando/01_Instalar_Anaconda.html">español</a>.</p>
+<p>The types of cells are markdown and coding. The words you are reading are in markdown! If you have opened this Jupyter notebook file (<code>Oaxaca_workshop.ipynb</code>), you can double click on this cell and see the markdown code that generated this text. To return to the formatted text, press <code>shift + enter</code>.</p>
+<p>Below, you can see some markdown formatting. Compare the original markdown code to the output formatted text.</p>
+<p><img alt="png" src="../assets/quickstart/markdown_original.png" />
+<img alt="png" src="../assets/quickstart/markdown_formatted.png" /></p>
+<h2 id="variables-and-your-first-python-code">Variables and your first Python code!</h2>
+<p>Let's write some code! Coding in Python is easy, and it all begins with variables. You can read more, <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/02_Getting_started_Empezando/02_Coding_cells.html">in English</a> or <a href="https://plantsandpython.github.io/PlantsAndPython/00_PREFACE/02_Getting_started_Empezando/03_Celdas_de_codigo.html">en español</a>, about writing code in Jupyter notebooks.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Let&#39;s write some code to calculate the area of a circle</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># by using the #hashtag, Python will ignore the text after &quot;#&quot;,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># allowing us to write comments to interpret our code</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span> <span class="c1"># we use &quot;=&quot; to set a variable value. This is pi</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># our radius value</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">Area</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># we can use our variables for calculations, &quot;**&quot; is for exponents</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">Area</span> <span class="c1"># we can simply write the variable to see it&#39;s value</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Press shift + enter to execute the code</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12.56636
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># or, we can use the &quot;print()&quot; function to print its value</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">Area</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12.56636
+</code></pre></div>
+<h2 id="lists-and-indexing">Lists and indexing</h2>
+<p>A list is a type of variable. Lists can hold any type of data, including integers (numbers like <code>1</code>, <code>2</code>, and <code>3</code>), floats (decimals, like <code>3.14159</code>), and strings (letters, which we indicate using quotes, like <code>"Oaxaca"</code> or <code>'Oaxaca'</code>.</p>
+<p>We create a list with square brackets and separating values with commas, like this:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># let&#39;s create our first list, with integers, floats, and a string</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">,</span> <span class="s2">&quot;Oaxaca&quot;</span><span class="p">]</span> 
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[1, 2, 3, 3.14159, &#39;Oaxaca&#39;]
+</code></pre></div>
+<p><strong>Workshop activity:</strong></p>
+<p>Let's introduce ourselves! We will create four lists, with our names, apellidos, the country or state in México we are coming from, and our favorite plant. Notice that number of items in the lists and their order is the same.</p>
+<p>Alejandra and I will go first!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># a list of workshop participant names!</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">nombre</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dan&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>         <span class="s2">&quot;Alejandra&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>         <span class="p">]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># a list of workshop participant last names!</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">apellido</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Chitwood&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>           <span class="s2">&quot;Rougon&quot;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>           <span class="p">]</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># a list of the country or Mexican state participants are from!</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">estado_o_pais</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Estados Unidos&quot;</span><span class="p">,</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                <span class="s2">&quot;Guanajuato&quot;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                <span class="p">]</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># a list of the favorite plants of the participants</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">planta_favorita</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;jacaranda&quot;</span><span class="p">,</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>                  <span class="s2">&quot;helecho&quot;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                  <span class="p">]</span>
+</span></code></pre></div>
+<p>Indexing is a way to access items in a list. Indexing starts with <code>0</code>. That is, the first element of the list is indexed by <code>0</code>, the second element by <code>1</code>, the third element by <code>2</code>.</p>
+<p>Let's assign a variable, <code>i</code>, an index value. We will use the index value to access information across the lists.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># index position. Index values start on 0</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># print the index position i of list nombre</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">apellido</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># print the index position i of list apellido</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">estado_o_pais</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># print the index position i of estado_o_pais</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">planta_favorita</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1"># print the index position i of list planta_favorita</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Dan
+Chitwood
+Estados Unidos
+jacaranda
+</code></pre></div>
+<p>Let's use the <code>print()</code> function to create a sentence using indexing:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># index position. Index values start on 0</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># print the sentence &quot;X es de X y su planta favorita es X&quot;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">apellido</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;es de&quot;</span><span class="p">,</span> <span class="n">estado_o_pais</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>      <span class="s2">&quot;y su planta favorita es&quot;</span><span class="p">,</span> <span class="n">planta_favorita</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Alejandra Rougon es de Guanajuato y su planta favorita es helecho
+</code></pre></div>
+<h2 id="loops">Loops</h2>
+<p>Loops allow us to change the value of a variable, using a process called <strong><em>iteration</em></strong>. Each time we <strong><em>iterate</em></strong> over a value, we change the value of the variable, allowing us to index over many values, or to perform multiple calculations.  </p>
+<p>The most common loop is a <code>for</code> loop. We can directly iterate over the values in a list. Let's try to iterate over the values in our list <code>planta_favorita</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span> <span class="n">planta</span> <span class="ow">in</span> <span class="n">planta_favorita</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">planta</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>jacaranda
+helecho
+</code></pre></div>
+<p>We can also loop by using index. Using the <code>range()</code> function, we can iterate over integer values. Let's try it out!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>0
+1
+2
+3
+4
+</code></pre></div>
+<p>We can conveniently use the <code>len()</code> function to determine how many elements are in a list. Then, using the list length with <code>range()</code>, we can iterate over each index position in a list.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>2
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nombre</span><span class="p">)):</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>0
+1
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nombre</span><span class="p">)):</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">apellido</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;es de&quot;</span><span class="p">,</span> <span class="n">estado_o_pais</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>      <span class="s2">&quot;y su planta favorita es&quot;</span><span class="p">,</span> <span class="n">planta_favorita</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Dan Chitwood es de Estados Unidos y su planta favorita es jacaranda
+Alejandra Rougon es de Guanajuato y su planta favorita es helecho
+</code></pre></div>
+<p>We can create an empty list outside of a loop. The empty list can be used to store values that are generated by the loop. Using the <code>.append()</code> function, we can add a new element to the list as it is generated within the loop. The format of <code>.append()</code> is different from what we've seen before. It takes the form of <code>my_list.append(item_to_append)</code>, where <code>item_to_append</code> will be added to <code>my_list</code>.</p>
+<p>Let's see how it works! In this loop, we will create a new list called <code>lista_nombre_completo</code> that stores a new variable called <code>nombre_completo</code>.  We use a <code>for</code> loop by index to find the correct <code>nombre</code> and <code>apellido</code> to use.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">lista_nombre_completo</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># create an empty list to store results</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nombre</span><span class="p">)):</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">nombre_completo</span> <span class="o">=</span> <span class="n">nombre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">apellido</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># create the variable nombre completo</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">lista_nombre_completo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nombre_completo</span><span class="p">)</span> <span class="c1"># add or append the variable to the end of the list</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista_nombre_completo</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[&#39;Dan_Chitwood&#39;, &#39;Alejandra_Rougon&#39;]
+</code></pre></div>
+<h2 id="how-to-build-a-sunflower-part-1">How to build a sunflower, Part 1:</h2>
+<h3 id="calculating-the-golden-angle-using-loops">Calculating the golden angle using loops</h3>
+<p>The Fibonacci sequence adds the previous two terms to create the next term. It starts with <code>1, 1</code>, followed by: </p>
+<p><code>1 + 1 = 2</code>,<br />
+<code>1 + 2 = 3</code>,<br />
+<code>2 + 3 = 5</code>,<br />
+<code>3 + 5 = 8</code>,<br />
+<code>5 + 8 = 13</code>,<br />
+<code>8 + 13 = 21</code>,<br />
+and so on.   </p>
+<p>The Fibonacci sequence can be used to calcualte the golden ratio and the golden angle. Let's try to calculate it using loops!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">fibonacci_seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># a list to store the Fibonacci series, with the first 2 elements</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># starting on 2, up to not including 11, increments of 1</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">n_minus_2</span> <span class="o">=</span> <span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># find the n-2 element of the series</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">n_minus_1</span> <span class="o">=</span> <span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># find the n-1 elemet of the series</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">n_value</span> <span class="o">=</span> <span class="n">n_minus_2</span> <span class="o">+</span> <span class="n">n_minus_1</span> <span class="c1"># add the n-2 and n-1 elements for the new element</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;value is&quot;</span><span class="p">,</span> <span class="n">n_value</span><span class="p">)</span> <span class="c1"># print out the new element</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="n">fibonacci_seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_value</span><span class="p">)</span> <span class="c1"># add the new element to the list</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>the 2 value is 2
+the 3 value is 3
+the 4 value is 5
+the 5 value is 8
+the 6 value is 13
+the 7 value is 21
+the 8 value is 34
+the 9 value is 55
+the 10 value is 89
+</code></pre></div>
+<p>We can simplify our code</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">fibonacci_seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># a list to store the Fibonacci series, with the first 2 elements</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># starting on 2, up to not including 30, increments of 1</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">fibonacci_seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># calculate the next element of the series</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">fibonacci_seq</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[1,
+ 1,
+ 2,
+ 3,
+ 5,
+ 8,
+ 13,
+ 21,
+ 34,
+ 55,
+ 89,
+ 144,
+ 233,
+ 377,
+ 610,
+ 987,
+ 1597,
+ 2584,
+ 4181,
+ 6765,
+ 10946,
+ 17711,
+ 28657,
+ 46368,
+ 75025,
+ 121393,
+ 196418,
+ 317811,
+ 514229,
+ 832040]
+</code></pre></div>
+<p>With a loop, you can calculate multiple things using the same indices. For example, the golden ratio is the ratio of the <code>n</code> divided by the <code>n-1</code> value of the Fibonacci series. Let's calculate the Fibonacci series and golden ratio at the same time.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">fibonacci_seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># a list to store the Fibonacci series, with the first 2 elements</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">golden_ratio_list</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a list to store the golden ratio</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># starting on 2, up to not including 30, increments of 1</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="n">fibonacci_seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># calculate the next element of the series</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="n">golden_ratio_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">/</span> <span class="n">fibonacci_seq</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># calculate the golden ratio</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">golden_ratio_list</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[2.0,
+ 1.5,
+ 1.6666666666666667,
+ 1.6,
+ 1.625,
+ 1.6153846153846154,
+ 1.619047619047619,
+ 1.6176470588235294,
+ 1.6181818181818182,
+ 1.6179775280898876,
+ 1.6180555555555556,
+ 1.6180257510729614,
+ 1.6180371352785146,
+ 1.618032786885246,
+ 1.618034447821682,
+ 1.6180338134001253,
+ 1.618034055727554,
+ 1.6180339631667064,
+ 1.6180339985218033,
+ 1.618033985017358,
+ 1.6180339901755971,
+ 1.618033988205325,
+ 1.618033988957902,
+ 1.6180339886704431,
+ 1.6180339887802426,
+ 1.618033988738303,
+ 1.6180339887543225,
+ 1.6180339887482036]
+</code></pre></div>
+<p>The golden angle (in degrees) is $360\times{1\over\phi^2}$, where $\phi$ is the golden ratio.<br />
+So, our estimate of the golden angle in degrees is:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">golden_ratio</span> <span class="o">=</span> <span class="n">golden_ratio_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># get the last element of the golden ratio list</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">golden_angle</span> <span class="o">=</span> <span class="mi">360</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">golden_ratio</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># approximate the golden angle</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">golden_angle</span><span class="p">)</span> <span class="c1"># print the golden angle in degrees</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>137.5077640503253
+</code></pre></div>
+<p>The real value of the golden angle is $180\times(3-\sqrt5)$</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">real_golden_angle</span> <span class="o">=</span> <span class="mi">180</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">real_golden_angle</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>137.50776405003785
+</code></pre></div>
+<p>We were close to the real value!</p>
+<h2 id="how-to-build-a-sunflower-part-2">How to build a sunflower, Part 2:</h2>
+<h3 id="building-and-plotting-our-sunflower">Building and plotting our sunflower</h3>
+<p>We have the golden angle! Now we can build our sunflower!</p>
+<p>Every successive floret of a sunflower is separated by the golden angle. The distance of each floret to the center is the square root of the order it was initiated. For every floret <code>n</code>, the angle (<code>theta</code>, in radians) and distance (radius, <code>r</code>) is therefore:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">theta</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">golden_angle</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Once we have calcualted <code>theta</code> and <code>r</code>, we can calcualte <code>x</code> and <code>y</code> coordinates for our sunflower using the following equations:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Before we construct our sunflower, we need to import modules. In Python, modules are sets of useful functions. Two important modules that we will be using today are <code>math</code> for mathematical functions, and <code>matplotlib.pyplot</code>, which allows us to plot. We need to reference the module a function comes from before using it, and we can abbreviate it. We will leave <code>math</code> as <code>math</code>, but we will shorten <code>matplotlib.pyplot</code> to <code>plt</code>.</p>
+<p>In the cell below, we import the <code>math</code> and <code>matplotlib.pyplot</code> modules to use their functions:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</span></code></pre></div>
+<p>Below, let's convert the golden angle to radians. Note the use of <code>math.pi</code> to get the value of $\pi$.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">real_golden_angle</span> <span class="o">=</span> <span class="mi">180</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="mi">5</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># the golden angle in degrees</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">gold_ang_rad</span> <span class="o">=</span> <span class="n">real_golden_angle</span> <span class="o">*</span> <span class="p">(</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span> <span class="p">)</span>  <span class="c1"># the golden angle in radians</span>
+</span></code></pre></div>
+<p>We are ready to calculate the coordinates of our sunflower! Study the code below, which calculates the <code>x</code> and <code>y</code> coordinates for 1000 florets.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">xlist</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a list to store x coordinate values</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">ylist</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># a list to store y coordinate values</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># starting on 0, iterate 1000x, increments of 1</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>    <span class="c1"># First, calculate theta and radius for n</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">gold_ang_rad</span> 
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>    <span class="c1"># Second, calculate x and y coordinate values for n</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>    <span class="c1"># Finally, store and append x and y values to a list</span>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>    <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>    <span class="n">ylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We can check our <code>xlist</code> and <code>ylist</code> values using indexing, and their length using the <code>len()</code> function.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The first five xlist values are&quot;</span><span class="p">,</span> <span class="n">xlist</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># print the first 5 xlist values</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The first five ylist values are&quot;</span><span class="p">,</span> <span class="n">ylist</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># print the first 5 ylist values</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The length of xlist is&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">xlist</span><span class="p">))</span> <span class="c1"># print the length of xlist</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The length of ylist is&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ylist</span><span class="p">))</span> <span class="c1"># print the length of ylist</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>The first five xlist values are [0.0, -0.7373688780783197, 0.12363864559502138, 1.053847020514727, -1.9694269706308574]
+The first five ylist values are [0.0, 0.6754902942615238, -1.4087985964343621, 1.3745568221620497, -0.3483639007586233]
+The length of xlist is 1000
+The length of ylist is 1000
+</code></pre></div>
+<p>But we want to <strong><em>see</em></strong> the <code>xlist</code> and <code>ylist</code> values, they are our sunflower!!!</p>
+<p>Let's try the most famous <code>matplotlib</code> function, <code>plt.plot()</code>. <code>plt.plot()</code> takes a list of x values and a list of y values, which we have!</p>
+<p>Let's try it!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7fce76a63d60&gt;]
+</code></pre></div>
+<p><img alt="png" src="../assets/quickstart/output_54_1.png" /></p>
+<p>Interesting. But maybe we want points, not lines. Let's try <code>plt.scatter()</code> instead.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>&lt;matplotlib.collections.PathCollection at 0x7fce76e8c520&gt;
+</code></pre></div>
+<p><img alt="png" src="../assets/quickstart/output_56_1.png" /></p>
+<p>That is looking better!</p>
+<p>There are may functions in <code>matplotlib</code>. Let's try some out and make a better looking sunflower!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">size</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># set point size</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span> <span class="c1"># set point color</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="n">transparent</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># set alpha, or transparency</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c1"># for colors, see https://matplotlib.org/stable/gallery/color/named_colors.html</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">transparent</span><span class="p">)</span> <span class="c1"># plot out points</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span> <span class="c1"># set aspect ratio to equal</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span> <span class="c1"># remove plot axes</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>(-34.240980675327435, 34.54297213836181, -34.449612822885, 34.40183494344153)
+</code></pre></div>
+<p><img alt="png" src="../assets/quickstart/output_58_1.png" /></p>
+<p>Do you see patterns in the sunflower? The spiral arms you see in the phyllotaxy of plants are called <strong><em>parastichies</em></strong>. The parastichies are defined by taking every <code>nth</code> element of the phyllotaxy series, where <code>n</code> is a member of the Fibonacci series.</p>
+<p>For indexing, remember there are three elements, separated by colon: the start, up to but not including the end, and a step. The step takes every <code>nth</code> element in a list. Full indexing looks like this:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">my_list</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">:</span><span class="n">step</span><span class="p">]</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="err">````</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">Let</span><span class="s1">&#39;s try to find our parastichies in the code below!</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="err">```</span><span class="n">python</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="n">size</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># set point size</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span> <span class="c1"># set point color</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="n">transparent</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># set alpha, or transparency</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="c1"># for colors, see https://matplotlib.org/stable/gallery/color/named_colors.html</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">transparent</span><span class="p">)</span> <span class="c1"># plot out points</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">[::</span><span class="mi">5</span><span class="p">],</span> <span class="n">ylist</span><span class="p">[::</span><span class="mi">5</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># parastichy 5</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">[::</span><span class="mi">8</span><span class="p">],</span> <span class="n">ylist</span><span class="p">[::</span><span class="mi">8</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># parastichy 8</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span> <span class="c1"># set aspect ratio to equal</span>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span> <span class="c1"># remove plot axes</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>(-34.240980675327435, 34.54297213836181, -34.449612822885, 34.40183494344153)
+</code></pre></div>
+<p><img alt="png" src="../assets/quickstart/output_60_1.png" /></p>
+<h2 id="how-to-build-a-sunflower-part-3">How to build a sunflower, Part 3:</h2>
+<h3 id="complex-code-and-going-forward-in-your-coding-journey">Complex code and going forward in your coding journey!</h3>
+<p>That is an introduction to Python! It is impossible to teach you everything in an hour! Coding is a lifelong journey, and we hope the <a href="https://plantsandpython.github.io/PlantsAndPython">Plants&amp;Python</a> resources can help you get started! Ask questions, google, and research, and you will find the answers to allow you to code whatever your intended goals are!  </p>
+<p>Below, is some fun code to try and make a model of a growing sunflower. Let's take the concepts we have learned and apply them to something more complex.  </p>
+<p>Let's introduce one more concept: the double loop. A double loop has a loop inside a loop. In the example below, for each value of <code>i</code> that is iterated, the inner loop iterates over each value of <code>j</code>. Once all <code>j</code> values have been iterated, the inner loop exits and go back to the outer loop and the next values of <code>i</code>. </p>
+<p>Try to understand how the two loops below work:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1"># the outer loop</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1"># the inner loop</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i is&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;and j is&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>i is 0 and j is 0
+i is 0 and j is 1
+i is 0 and j is 2
+i is 0 and j is 3
+i is 0 and j is 4
+i is 1 and j is 0
+i is 1 and j is 1
+i is 1 and j is 2
+i is 1 and j is 3
+i is 1 and j is 4
+i is 2 and j is 0
+i is 2 and j is 1
+i is 2 and j is 2
+i is 2 and j is 3
+i is 2 and j is 4
+i is 3 and j is 0
+i is 3 and j is 1
+i is 3 and j is 2
+i is 3 and j is 3
+i is 3 and j is 4
+i is 4 and j is 0
+i is 4 and j is 1
+i is 4 and j is 2
+i is 4 and j is 3
+i is 4 and j is 4
+</code></pre></div>
+<p>The double loop is important if we want to make a growing model of a sunflower. The way we currently calculate the <code>x</code> and <code>y</code> coordinate values is a problem. Let's say our strategy is to take 1 floret, then 2 florets, then 3 florets, and so on, just like a sunflower grows. The way we currently have the code, the first floret will always have the shortest radius! In order to make sure the first floret continues to grow in its radius length, we need to <strong><em>reverse</em></strong> the order of the radius list each time we add a floret.</p>
+<p>This is some <strong><em>psuedo-code</em></strong> to help understand this problem:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># we start with the first floret</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">thetas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">*</span><span class="n">gold_ang_rad</span><span class="p">]</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="n">radius</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span> 
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">reverse_radius</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="c1"># we add the second floret</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="n">thetas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">*</span><span class="n">gold_ang_rad</span> <span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">gold_ang_rad</span><span class="p">]</span> <span class="c1"># the angles of each floret</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="n">radius</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="c1"># but the first floret should have the longest radius, not shortest!</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="n">reverse_radius</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># reverse the radius list order. Now first floret has longest radius</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="c1"># we add the third floret</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="n">thetas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">*</span><span class="n">gold_ang_rad</span> <span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">gold_ang_rad</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">gold_ang_rad</span><span class="p">]</span> <span class="c1"># the angles of each floret</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="n">radius</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="c1"># but the first floret should have the longest radius, not shortest!</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="n">reverse_radius</span> <span class="o">=</span> <span class="p">[</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># reverse the radius list order. Now first floret has longest radius</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="err">````</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="n">When</span> <span class="n">making</span> <span class="n">long</span><span class="p">,</span> <span class="nb">complex</span> <span class="n">code</span><span class="p">,</span> <span class="n">it</span><span class="s1">&#39;s important to have a plan and to sketch out your thoughts with pseudo-code. Here is some more pseudo-code for our growing sunflower!</span>
+</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>
+</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a><span class="err">```</span><span class="n">python</span>
+</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>
+</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a><span class="c1"># First, pre-calculate thetas and radii</span>
+</span><span id="__span-31-22"><a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a>
+</span><span id="__span-31-23"><a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a><span class="n">theta_list</span> <span class="c1"># store thetas</span>
+</span><span id="__span-31-24"><a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a><span class="n">radii_list</span> <span class="c1"># store radii</span>
+</span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a>
+</span><span id="__span-31-26"><a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">():</span> <span class="c1"># for the number of florets</span>
+</span><span id="__span-31-27"><a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a>    <span class="n">theta</span> <span class="c1"># calculate theta for each n</span>
+</span><span id="__span-31-28"><a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a>    <span class="n">r</span> <span class="c1"># calculate r for each n</span>
+</span><span id="__span-31-29"><a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a>
+</span><span id="__span-31-30"><a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a><span class="c1"># Next, plot our our animation frame-by-frame</span>
+</span><span id="__span-31-31"><a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a>
+</span><span id="__span-31-32"><a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a><span class="c1"># The outer loop will select current florets</span>
+</span><span id="__span-31-33"><a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a><span class="c1"># adding one floret for each frame of the animation</span>
+</span><span id="__span-31-34"><a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a><span class="c1"># and reverse the radius list</span>
+</span><span id="__span-31-35"><a id="__codelineno-31-35" name="__codelineno-31-35" href="#__codelineno-31-35"></a>
+</span><span id="__span-31-36"><a id="__codelineno-31-36" name="__codelineno-31-36" href="#__codelineno-31-36"></a><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">florets</span><span class="p">:</span> <span class="c1"># for each floret</span>
+</span><span id="__span-31-37"><a id="__codelineno-31-37" name="__codelineno-31-37" href="#__codelineno-31-37"></a>
+</span><span id="__span-31-38"><a id="__codelineno-31-38" name="__codelineno-31-38" href="#__codelineno-31-38"></a>    <span class="n">current_thetas</span> <span class="c1"># get the current angles, growing +1 each iteration</span>
+</span><span id="__span-31-39"><a id="__codelineno-31-39" name="__codelineno-31-39" href="#__codelineno-31-39"></a>    <span class="n">current_radii</span> <span class="c1"># get the current radii, growing +1 each interation</span>
+</span><span id="__span-31-40"><a id="__codelineno-31-40" name="__codelineno-31-40" href="#__codelineno-31-40"></a>    <span class="n">reverse_radii</span> <span class="c1"># reverse the current radii list</span>
+</span><span id="__span-31-41"><a id="__codelineno-31-41" name="__codelineno-31-41" href="#__codelineno-31-41"></a>
+</span><span id="__span-31-42"><a id="__codelineno-31-42" name="__codelineno-31-42" href="#__codelineno-31-42"></a>    <span class="c1"># now that we have the current thetas and reversed radii</span>
+</span><span id="__span-31-43"><a id="__codelineno-31-43" name="__codelineno-31-43" href="#__codelineno-31-43"></a>    <span class="c1"># we use the inner loop to calculate x and y coordinates</span>
+</span><span id="__span-31-44"><a id="__codelineno-31-44" name="__codelineno-31-44" href="#__codelineno-31-44"></a>
+</span><span id="__span-31-45"><a id="__codelineno-31-45" name="__codelineno-31-45" href="#__codelineno-31-45"></a>    <span class="n">xlist</span> <span class="c1"># store x values</span>
+</span><span id="__span-31-46"><a id="__codelineno-31-46" name="__codelineno-31-46" href="#__codelineno-31-46"></a>    <span class="n">ylist</span> <span class="c1"># store y values</span>
+</span><span id="__span-31-47"><a id="__codelineno-31-47" name="__codelineno-31-47" href="#__codelineno-31-47"></a>
+</span><span id="__span-31-48"><a id="__codelineno-31-48" name="__codelineno-31-48" href="#__codelineno-31-48"></a>    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">florets</span><span class="p">:</span> <span class="c1"># for the currently selected florets</span>
+</span><span id="__span-31-49"><a id="__codelineno-31-49" name="__codelineno-31-49" href="#__codelineno-31-49"></a>
+</span><span id="__span-31-50"><a id="__codelineno-31-50" name="__codelineno-31-50" href="#__codelineno-31-50"></a>        <span class="n">x</span> <span class="c1"># calculate x for each currently selected floret</span>
+</span><span id="__span-31-51"><a id="__codelineno-31-51" name="__codelineno-31-51" href="#__codelineno-31-51"></a>        <span class="n">y</span> <span class="c1"># calculate y for each currently selected floret</span>
+</span><span id="__span-31-52"><a id="__codelineno-31-52" name="__codelineno-31-52" href="#__codelineno-31-52"></a>
+</span><span id="__span-31-53"><a id="__codelineno-31-53" name="__codelineno-31-53" href="#__codelineno-31-53"></a>    <span class="c1"># Once all x and y vals calculated for currently selected florets</span>
+</span><span id="__span-31-54"><a id="__codelineno-31-54" name="__codelineno-31-54" href="#__codelineno-31-54"></a>    <span class="c1"># then plot our sunflower! </span>
+</span><span id="__span-31-55"><a id="__codelineno-31-55" name="__codelineno-31-55" href="#__codelineno-31-55"></a>    <span class="c1"># this is one frame of the animation</span>
+</span><span id="__span-31-56"><a id="__codelineno-31-56" name="__codelineno-31-56" href="#__codelineno-31-56"></a>
+</span><span id="__span-31-57"><a id="__codelineno-31-57" name="__codelineno-31-57" href="#__codelineno-31-57"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Check out the code below! Try to understand how the code is working!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Imports to get the animation to work</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="c1"># First, pre-calculate thetas and radii</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="n">thetas</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># store thetas</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="n">radii</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># store radii</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">750</span><span class="p">):</span> <span class="c1"># for the number of florets</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>    <span class="n">theta</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">gold_ang_rad</span> <span class="c1"># calculate theta for each n</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="c1"># calculate r for each n</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>    <span class="n">thetas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>    <span class="n">radii</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="c1"># For animation, you need to call a figure</span>
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>  <span class="c1"># For a dark background</span>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">radii</span><span class="p">)):</span> <span class="c1"># for each floret</span>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a>
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>    <span class="n">current_thetas</span> <span class="o">=</span> <span class="n">thetas</span><span class="p">[</span><span class="mi">0</span><span class="p">:(</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># get the current angles, growing +1 each iteration</span>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>    <span class="n">current_radii</span> <span class="o">=</span> <span class="n">radii</span><span class="p">[</span><span class="mi">0</span><span class="p">:(</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># get the current radii, growing +1 each interation</span>
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a>
+</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a>    <span class="n">current_radii</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># reverse the current radii list</span>
+</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a>
+</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a>    <span class="c1"># now that we have the current thetas and reversed radii</span>
+</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a>    <span class="c1"># we use the inner loop to calculate x and y coordinates</span>
+</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a>
+</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a>    <span class="n">xlist</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># store x values</span>
+</span><span id="__span-32-33"><a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a>    <span class="n">ylist</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># store y values</span>
+</span><span id="__span-32-34"><a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a>
+</span><span id="__span-32-35"><a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a>    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">f</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># for the currently selected florets</span>
+</span><span id="__span-32-36"><a id="__codelineno-32-36" name="__codelineno-32-36" href="#__codelineno-32-36"></a>
+</span><span id="__span-32-37"><a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a>        <span class="n">r</span> <span class="o">=</span> <span class="n">current_radii</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># select the current radius</span>
+</span><span id="__span-32-38"><a id="__codelineno-32-38" name="__codelineno-32-38" href="#__codelineno-32-38"></a>        <span class="n">theta</span> <span class="o">=</span> <span class="n">current_thetas</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># select the current theta</span>
+</span><span id="__span-32-39"><a id="__codelineno-32-39" name="__codelineno-32-39" href="#__codelineno-32-39"></a>
+</span><span id="__span-32-40"><a id="__codelineno-32-40" name="__codelineno-32-40" href="#__codelineno-32-40"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># calculate x for each currently selected floret</span>
+</span><span id="__span-32-41"><a id="__codelineno-32-41" name="__codelineno-32-41" href="#__codelineno-32-41"></a>        <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="c1"># calculate y for each currently selected floret</span>
+</span><span id="__span-32-42"><a id="__codelineno-32-42" name="__codelineno-32-42" href="#__codelineno-32-42"></a>
+</span><span id="__span-32-43"><a id="__codelineno-32-43" name="__codelineno-32-43" href="#__codelineno-32-43"></a>        <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># store x values</span>
+</span><span id="__span-32-44"><a id="__codelineno-32-44" name="__codelineno-32-44" href="#__codelineno-32-44"></a>        <span class="n">ylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="c1"># store y values</span>
+</span><span id="__span-32-45"><a id="__codelineno-32-45" name="__codelineno-32-45" href="#__codelineno-32-45"></a>
+</span><span id="__span-32-46"><a id="__codelineno-32-46" name="__codelineno-32-46" href="#__codelineno-32-46"></a>    <span class="c1"># Once all x and y vals calculated for currently selected florets</span>
+</span><span id="__span-32-47"><a id="__codelineno-32-47" name="__codelineno-32-47" href="#__codelineno-32-47"></a>    <span class="c1"># then plot our sunflower! </span>
+</span><span id="__span-32-48"><a id="__codelineno-32-48" name="__codelineno-32-48" href="#__codelineno-32-48"></a>    <span class="c1"># this is one frame of the animation</span>
+</span><span id="__span-32-49"><a id="__codelineno-32-49" name="__codelineno-32-49" href="#__codelineno-32-49"></a>
+</span><span id="__span-32-50"><a id="__codelineno-32-50" name="__codelineno-32-50" href="#__codelineno-32-50"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-32-51"><a id="__codelineno-32-51" name="__codelineno-32-51" href="#__codelineno-32-51"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">[::</span><span class="mi">5</span><span class="p">],</span> <span class="n">ylist</span><span class="p">[::</span><span class="mi">5</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-32-52"><a id="__codelineno-32-52" name="__codelineno-32-52" href="#__codelineno-32-52"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xlist</span><span class="p">[::</span><span class="mi">8</span><span class="p">],</span> <span class="n">ylist</span><span class="p">[::</span><span class="mi">8</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-32-53"><a id="__codelineno-32-53" name="__codelineno-32-53" href="#__codelineno-32-53"></a>
+</span><span id="__span-32-54"><a id="__codelineno-32-54" name="__codelineno-32-54" href="#__codelineno-32-54"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="c1"># Put maximum xlim values here</span>
+</span><span id="__span-32-55"><a id="__codelineno-32-55" name="__codelineno-32-55" href="#__codelineno-32-55"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="c1"># Put maximum ylim values here</span>
+</span><span id="__span-32-56"><a id="__codelineno-32-56" name="__codelineno-32-56" href="#__codelineno-32-56"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span> <span class="c1"># no axis</span>
+</span><span id="__span-32-57"><a id="__codelineno-32-57" name="__codelineno-32-57" href="#__codelineno-32-57"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span> <span class="c1"># equal aspect ratio</span>
+</span><span id="__span-32-58"><a id="__codelineno-32-58" name="__codelineno-32-58" href="#__codelineno-32-58"></a>
+</span><span id="__span-32-59"><a id="__codelineno-32-59" name="__codelineno-32-59" href="#__codelineno-32-59"></a>    <span class="c1"># If you want to save files to create a GIF</span>
+</span><span id="__span-32-60"><a id="__codelineno-32-60" name="__codelineno-32-60" href="#__codelineno-32-60"></a>    <span class="c1"># filename = &quot;temp&quot; + str(n) + &quot;.jpg&quot;</span>
+</span><span id="__span-32-61"><a id="__codelineno-32-61" name="__codelineno-32-61" href="#__codelineno-32-61"></a>    <span class="c1"># plt.savefig(&quot;./temp/&quot; + filename)</span>
+</span><span id="__span-32-62"><a id="__codelineno-32-62" name="__codelineno-32-62" href="#__codelineno-32-62"></a>
+</span><span id="__span-32-63"><a id="__codelineno-32-63" name="__codelineno-32-63" href="#__codelineno-32-63"></a>    <span class="c1"># This is the code that creates the animation</span>
+</span><span id="__span-32-64"><a id="__codelineno-32-64" name="__codelineno-32-64" href="#__codelineno-32-64"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span> 
+</span><span id="__span-32-65"><a id="__codelineno-32-65" name="__codelineno-32-65" href="#__codelineno-32-65"></a>    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-32-66"><a id="__codelineno-32-66" name="__codelineno-32-66" href="#__codelineno-32-66"></a>    <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</span><span id="__span-32-67"><a id="__codelineno-32-67" name="__codelineno-32-67" href="#__codelineno-32-67"></a>    <span class="n">fig</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="__span-32-68"><a id="__codelineno-32-68" name="__codelineno-32-68" href="#__codelineno-32-68"></a>
+</span><span id="__span-32-69"><a id="__codelineno-32-69" name="__codelineno-32-69" href="#__codelineno-32-69"></a><span class="c1"># Closes the figure animation once complete</span>
+</span><span id="__span-32-70"><a id="__codelineno-32-70" name="__codelineno-32-70" href="#__codelineno-32-70"></a><span class="c1"># plt.close()</span>
+</span></code></pre></div>
+<p><img alt="png" src="../assets/quickstart/output_67_0.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04_Markdown_cells/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Markdown cells | celdas de markdown">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Markdown cells | celdas de markdown
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../1.00_Cover_image_1/" class="md-footer__link md-footer__link--next" aria-label="Next: Cover illustration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Cover illustration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan Chitwood, Alejandra Rougon-Cardoso, Robert VanBuren
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@DanChitwood" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://plantsandpython.github.io/PlantsAndPython/00_Opening_page.html" target="_blank" rel="noopener" title="plantsandpython.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

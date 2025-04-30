@@ -1,0 +1,4856 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal">
+      
+      
+        <meta name="author" content="Dan Chitwood">
+      
+      
+        <link rel="canonical" href="https://danchitwood.github.io/plants_and_python/ES_2.4_Subgraficos/">
+      
+      
+        <link rel="prev" href="../ES_2.3_Leyendas/">
+      
+      
+        <link rel="next" href="../ES_2_practice/">
+      
+      
+      <link rel="icon" href="../assets/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>2.4 Subgráficos - Plants&Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="2.4 Subgráficos - Plants&Python" >
+      
+        <meta  property="og:description"  content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal" >
+      
+        <meta  property="og:image"  content="https://danchitwood.github.io/plants_and_python/assets/images/social/ES_2.4_Subgraficos.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://danchitwood.github.io/plants_and_python/ES_2.4_Subgraficos/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="2.4 Subgráficos - Plants&Python" >
+      
+        <meta  name="twitter:description"  content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal" >
+      
+        <meta  name="twitter:image"  content="https://danchitwood.github.io/plants_and_python/assets/images/social/ES_2.4_Subgraficos.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#24-subgraficos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Plants&amp;Python" class="md-header__button md-logo" aria-label="Plants&Python" data-md-component="logo">
+      
+  <img src="../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plants&Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.4 Subgráficos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DanChitwood/plants_and_python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DanChitwood/plants_and_python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Welcome | Bienvenid@
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_Installing_Anaconda/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started | Empezando
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../OAXACA_workshop/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1.00_Cover_image_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lessons in English
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ES_1.00_Ilustracion_de_portada_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lecciones en español
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00_class_publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Class publications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Plants&amp;Python" class="md-nav__button md-logo" aria-label="Plants&Python" data-md-component="logo">
+      
+  <img src="../assets/icon.png" alt="logo">
+
+    </a>
+    Plants&Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DanChitwood/plants_and_python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DanChitwood/plants_and_python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Welcome | Bienvenid@
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Welcome | Bienvenid@
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting started | Empezando
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started | Empezando
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_Installing_Anaconda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation | Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Coding_cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding cells | celdas de código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_Markdown_cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown cells | celdas de markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OAXACA_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lessons in English
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons in English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Variables, Lists & Indexing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            1. Variables, Lists & Indexing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.00_Cover_image_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1_Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1 Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2_Indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2 Indexing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3 Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4_Indexing_List_Elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4 Indexing list elements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5_Modifying_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5 Modifying lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6_List_of_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6 List of lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.7_Slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7 Slicing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.8_Data_Types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8 Data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plants & climate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Visualizing Data with Matplotlib
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. Visualizing Data with Matplotlib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.00_Cover_image_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0_Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1_Plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Plots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2_Shape_Size_and_Color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 Shape, size, and color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3_Legends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 Legends
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4_Subplots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subplots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Leaf & sunflower shapes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Loops & the Golden Angle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. Loops & the Golden Angle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.00_Cover_image_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.0_Range_Function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0 Range function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1_For_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1 For loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2_Counters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2 Counters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3_Using_Lists_and_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3 Using lists and loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4_Calculating_Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4 Calculating Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.5_While_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5 While loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modeling sunflowers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Data Analysis with Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Data Analysis with Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.00_Cover_image_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.0_Reading_in_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0 Reading in data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1_Head_and_Tail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1 Head and tail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2_Selecting_Columns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2 Selecting columns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3_Descriptive_Statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3 Descriptive statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4_Masks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4 Masks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5_Using_iloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5 Using iloc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6_Seaborn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6 Seaborn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grapes in a warming world
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    5. UNIX command line
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            5. UNIX command line
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.00_Cover_image_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0_Introduction_to_Command_Line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.0 Introduction to command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1_TheVirtual_Terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 Virtual terminal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2_Exploring_Folders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Exploring folders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3_Working_with_Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3 Working with files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4_Options_and_Arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4 Options and arguments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5_Copy_Move_and_Remove_Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5 Copy, move & remove files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    6. UNIX commands for data mining
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            6. UNIX commands for data mining
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.0_Edit_Sort_Cut_grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.0 edit, sort, cut & grep
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.1_Word_Count_Pipelines_Permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.1 Word count, pipelines & permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.2_Biological_Data_Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.2 Biological data formats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    7. Scripting with bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            7. Scripting with bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.0_WorkingRemotely/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.0 Working remotely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.1_Scripting_with_bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1 Scripting with bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.2_Summary_of_Commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2 Summary of commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    8. Genomics and Biopython
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            8. Genomics and Biopython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.0_Intro_to_Genomics_and_Biopython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8.0 Intro to plant genomics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.1_HPCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8.1 Using the HPCC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    9. Comparative genomics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            9. Comparative genomics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.0_Comp_Genomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9.0 Comparative genomics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    10. RNASeq analysis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            10. RNASeq analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.0_RNAseq_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10.0 Short read analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    11. Variant discovery
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            11. Variant discovery
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.0_Variant_Discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11.0 Identifying variants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lecciones en español
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Lecciones en español
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Variables, listas y indexación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            1. Variables, listas y indexación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.00_Ilustracion_de_portada_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.0_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.1_Funciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1 Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.2_Indexacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2 Indexación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.3_Listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3 Listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.4_Indexando_los_elementos_de_una_lista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4 Indexando los elementos de una lista
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.5_Modificando_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5 Modificando listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.6_Lista_de_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6 Lista de listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.7_Rebanar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7 Rebanar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.8_Tipos_de_datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8 Tipos de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las plantas y el clima
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Visualización de datos con matplotlib
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. Visualización de datos con matplotlib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.00_Ilustracion_de_portada_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.0_Modulos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.1_Graficos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Gráficos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.2_Forma_tamano_y_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 Forma, tamaño y color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.3_Leyendas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 Leyendas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subgráficos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subgráficos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#crear-subgraficos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear subgráficos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las formas de las hojas y girasoles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Loops y el ángulo dorado
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. Loops y el ángulo dorado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.00_Ilustracion_de_portada_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.0_La_funcion_range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0 La función range
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.1_Loops_for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1 Loops for
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.2_Contadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2 Contadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.3_Usando_listas_y_loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3 Usando listas y loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.4_Calcular_Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4 Calcular Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.5_Loops_while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5 Loops while
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cómo construir un girasol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Análisis de datos con pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Análisis de datos con pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.00_Ilustracion_de_portada_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.0_Leyendo_en_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0 Leyendo en data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.1_Head_y_tail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1 Head y tail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.2_Seleccionando_columnas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2 Seleccionando columnas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.3_Estadisticas_descriptivas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3 Estadísticas descriptivas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.4_Enmascaramiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4 Enmascaramiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.5_Usando_iloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5 Usando iloc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.6_Seaborn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6 Seaborn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vides en un mundo que se calienta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    5. Línea de comandos de UNIX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            5. Línea de comandos de UNIX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.00_Ilustracion_de_portada_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.0_IntroduccionLineaDeComandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.0 Introducción a la línea de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.1_LaTerminal_Virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 Terminal virtual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.2_ExplorandoDirectorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Explorando directorios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.3_Trabajando_con_archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3 Trabajando con archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.4_Opciones_y_Argumentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4 Opciones y argumentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.5_Copiar_Mover_Eliminar_Archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5 Copiar, mover y eliminar archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    6.0 Minería de datos en la línea de comandos de UNIX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            6.0 Minería de datos en la línea de comandos de UNIX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.0_Editar_Ordentar_Cortar_grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.0 Editar, ordenar, cortar y grep
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.1_Contar_Palabras_Tuberias_Permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.1 Contar palabras, tuberías y permisos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.2_Formatos_Biologicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.2 Formatos de datos biológicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    7.0 Programmando con bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            7.0 Programmando con bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.0_Trabajando_de_manera_remota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.0 Trabajando de manera remota
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.1_Programando_con_Bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1 Programando con bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.2_Resumen_de_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2 Resumen de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_class_publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class publications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="24-subgraficos">2.4 Subgráficos</h1>
+<h2 id="crear-subgraficos">Crear subgráficos</h2>
+<hr />
+<p><strong>Mira este video de 19:11 a 26:34</strong></p>
+<p>Para español, haga click en configuración, seleccione "español" debajo de los subtítulos.</p>
+<p>Traducción por Evelia L. Coss-Navarrete, Langebio-Cinvestav, Irapuato, México)</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Para reproducir el siguiente tutorial, presiona shift + enter</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">start</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">())</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">end</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">34</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">())</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;PJ1dvAgOAj0&quot;</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">360</span><span class="p">)</span>
+</span></code></pre></div>
+<p><iframe
+    width="640"
+    height="360"
+    src="https://www.youtube.com/embed/PJ1dvAgOAj0?start=1151&end=1594"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</p>
+<p><strong><em>La siguiente es una transcripción del video.</em></strong></p>
+<blockquote>
+<p>💡 <strong><em>Recuerde:</em></strong> primero debe importar <code>matplotlib</code> para poder hacer gráficos. A continuación se muestran los datos con los que trabajaremos en esta lección que se utilizan en el video. Estas son listas de valores de coordenadas <code>x</code> e <code>y</code> para 15 especies diferentes de <em>Vitis</em> y <em>Ampelopsis</em>. Ejecute la celda a continuación para leer los datos para completar esta lección.</p>
+</blockquote>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Ejecute esta celda para importar matplotlib</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Esta celda contiene la lista de valores x y y para  </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># las formas de las hojas de las 15 especies de Vitis y Ampelopsis.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Cada lista está abreviada con la inicial del género y epíteto de la especie.</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Ampelopsis acoutifolia (en realidad aconitifolia)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># NOTA: Hay un error de transcripción para esta especie, que en realidad es</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Ampelopsis aconitifolia (no es A. &quot;acoutifolia&quot;)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># El error se propaga en los videos, narración, texto y cuadernos</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># pero no afecta la lección en cuestión para trazar en matplotlib</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">Aaco_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">13.81197507</span><span class="p">,</span><span class="o">-</span><span class="mf">14.58128237</span><span class="p">,</span><span class="o">-</span><span class="mf">135.3576208</span><span class="p">,</span><span class="o">-</span><span class="mf">3.48017966</span><span class="p">,</span><span class="o">-</span><span class="mf">285.0289837</span><span class="p">,</span><span class="o">-</span><span class="mf">4.874351136</span><span class="p">,</span><span class="o">-</span><span class="mf">126.9904669</span><span class="p">,</span><span class="mf">10.54932685</span><span class="p">,</span><span class="mf">170.4482865</span><span class="p">,</span><span class="mf">40.82555888</span><span class="p">,</span><span class="mf">205.158889</span><span class="p">,</span><span class="mf">124.6343366</span><span class="p">,</span><span class="mf">13.81197507</span><span class="p">]</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">Aaco_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">27.83951365</span><span class="p">,</span><span class="mf">148.6870909</span><span class="p">,</span><span class="mf">157.2273013</span><span class="p">,</span><span class="mf">35.73510131</span><span class="p">,</span><span class="o">-</span><span class="mf">30.02915903</span><span class="p">,</span><span class="mf">9.54075375</span><span class="p">,</span><span class="o">-</span><span class="mf">280.2095191</span><span class="p">,</span><span class="mf">0.200400495</span><span class="p">,</span><span class="o">-</span><span class="mf">234.1044141</span><span class="p">,</span><span class="mf">20.41991159</span><span class="p">,</span><span class="mf">41.33121759</span><span class="p">,</span><span class="mf">96.75084391</span><span class="p">,</span><span class="mf">27.83951365</span><span class="p">]</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># Ampelopsis brevipedunculata</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># NOTA: Esta especie ahora se conoce como A. glandulosa var. brevipedunculata</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">Abre_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">40.00325135</span><span class="p">,</span><span class="o">-</span><span class="mf">81.37047548</span><span class="p">,</span><span class="o">-</span><span class="mf">186.835592</span><span class="p">,</span><span class="o">-</span><span class="mf">139.3272085</span><span class="p">,</span><span class="o">-</span><span class="mf">287.5337006</span><span class="p">,</span><span class="o">-</span><span class="mf">89.61277053</span><span class="p">,</span><span class="o">-</span><span class="mf">134.9263008</span><span class="p">,</span><span class="mf">47.43458846</span><span class="p">,</span><span class="mf">144.6301719</span><span class="p">,</span><span class="mf">163.5438321</span><span class="p">,</span><span class="mf">225.9684307</span><span class="p">,</span><span class="mf">204.719859</span><span class="p">,</span><span class="mf">40.00325135</span><span class="p">]</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">Abre_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">96.8926433</span><span class="p">,</span><span class="mf">203.3273536</span><span class="p">,</span><span class="mf">134.0172438</span><span class="p">,</span><span class="mf">99.7070006</span><span class="p">,</span><span class="o">-</span><span class="mf">81.35389923</span><span class="p">,</span><span class="o">-</span><span class="mf">17.90701212</span><span class="p">,</span><span class="o">-</span><span class="mf">335.624547</span><span class="p">,</span><span class="o">-</span><span class="mf">80.02986776</span><span class="p">,</span><span class="o">-</span><span class="mf">262.0385648</span><span class="p">,</span><span class="o">-</span><span class="mf">27.31979918</span><span class="p">,</span><span class="o">-</span><span class="mf">42.24377429</span><span class="p">,</span><span class="mf">82.08218538</span><span class="p">,</span><span class="mf">96.8926433</span><span class="p">]</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="c1"># Ampelopsis cordata</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">Acor_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">41.26484889</span><span class="p">,</span><span class="o">-</span><span class="mf">99.68651819</span><span class="p">,</span><span class="o">-</span><span class="mf">203.5550411</span><span class="p">,</span><span class="o">-</span><span class="mf">181.4080156</span><span class="p">,</span><span class="o">-</span><span class="mf">226.4063517</span><span class="p">,</span><span class="o">-</span><span class="mf">174.1104713</span><span class="p">,</span><span class="o">-</span><span class="mf">142.2197176</span><span class="p">,</span><span class="mf">81.25359041</span><span class="p">,</span><span class="mf">113.9079805</span><span class="p">,</span><span class="mf">205.9930561</span><span class="p">,</span><span class="mf">230.8000389</span><span class="p">,</span><span class="mf">226.6914467</span><span class="p">,</span><span class="mf">41.26484889</span><span class="p">]</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">Acor_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">105.1580727</span><span class="p">,</span><span class="mf">209.8514829</span><span class="p">,</span><span class="mf">131.8410788</span><span class="p">,</span><span class="mf">111.9833751</span><span class="p">,</span><span class="o">-</span><span class="mf">70.79184424</span><span class="p">,</span><span class="o">-</span><span class="mf">60.25829908</span><span class="p">,</span><span class="o">-</span><span class="mf">326.5994491</span><span class="p">,</span><span class="o">-</span><span class="mf">170.6003249</span><span class="p">,</span><span class="o">-</span><span class="mf">223.0042176</span><span class="p">,</span><span class="o">-</span><span class="mf">44.58524791</span><span class="p">,</span><span class="o">-</span><span class="mf">45.80679706</span><span class="p">,</span><span class="mf">71.64004113</span><span class="p">,</span><span class="mf">105.1580727</span><span class="p">]</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1"># Vitis acerifolia</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="n">Vace_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">47.55748802</span><span class="p">,</span><span class="o">-</span><span class="mf">102.1666218</span><span class="p">,</span><span class="o">-</span><span class="mf">218.3415108</span><span class="p">,</span><span class="o">-</span><span class="mf">183.5085694</span><span class="p">,</span><span class="o">-</span><span class="mf">234.8755094</span><span class="p">,</span><span class="o">-</span><span class="mf">152.1581487</span><span class="p">,</span><span class="o">-</span><span class="mf">113.8943819</span><span class="p">,</span><span class="mf">53.48770667</span><span class="p">,</span><span class="mf">84.83899263</span><span class="p">,</span><span class="mf">206.557697</span><span class="p">,</span><span class="mf">240.589609</span><span class="p">,</span><span class="mf">243.5717264</span><span class="p">,</span><span class="mf">47.55748802</span><span class="p">]</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="n">Vace_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">111.9982016</span><span class="p">,</span><span class="mf">241.5287104</span><span class="p">,</span><span class="mf">125.6905949</span><span class="p">,</span><span class="mf">110.350904</span><span class="p">,</span><span class="o">-</span><span class="mf">108.1932176</span><span class="p">,</span><span class="o">-</span><span class="mf">74.67866027</span><span class="p">,</span><span class="o">-</span><span class="mf">283.2678229</span><span class="p">,</span><span class="o">-</span><span class="mf">161.1592736</span><span class="p">,</span><span class="o">-</span><span class="mf">243.1116283</span><span class="p">,</span><span class="o">-</span><span class="mf">54.52616737</span><span class="p">,</span><span class="o">-</span><span class="mf">68.953011</span><span class="p">,</span><span class="mf">95.74558526</span><span class="p">,</span><span class="mf">111.9982016</span><span class="p">]</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="c1"># Vitis aestivalis</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="n">Vaes_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">34.13897003</span><span class="p">,</span><span class="o">-</span><span class="mf">59.06591289</span><span class="p">,</span><span class="o">-</span><span class="mf">192.0336456</span><span class="p">,</span><span class="o">-</span><span class="mf">169.5476603</span><span class="p">,</span><span class="o">-</span><span class="mf">261.8813454</span><span class="p">,</span><span class="o">-</span><span class="mf">154.4511279</span><span class="p">,</span><span class="o">-</span><span class="mf">132.6031657</span><span class="p">,</span><span class="mf">56.04516606</span><span class="p">,</span><span class="mf">119.9789735</span><span class="p">,</span><span class="mf">205.0834004</span><span class="p">,</span><span class="mf">246.928663</span><span class="p">,</span><span class="mf">209.2801298</span><span class="p">,</span><span class="mf">34.13897003</span><span class="p">]</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="n">Vaes_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">80.26320349</span><span class="p">,</span><span class="mf">227.2107718</span><span class="p">,</span><span class="mf">155.0919347</span><span class="p">,</span><span class="mf">123.2629647</span><span class="p">,</span><span class="o">-</span><span class="mf">86.47992069</span><span class="p">,</span><span class="o">-</span><span class="mf">70.12024178</span><span class="p">,</span><span class="o">-</span><span class="mf">317.80585</span><span class="p">,</span><span class="o">-</span><span class="mf">156.8388147</span><span class="p">,</span><span class="o">-</span><span class="mf">247.9415158</span><span class="p">,</span><span class="o">-</span><span class="mf">31.73423173</span><span class="p">,</span><span class="o">-</span><span class="mf">28.37195726</span><span class="p">,</span><span class="mf">120.2692722</span><span class="p">,</span><span class="mf">80.26320349</span><span class="p">]</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="c1"># Vitis amurensis</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="n">Vamu_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">36.94310365</span><span class="p">,</span><span class="o">-</span><span class="mf">63.29959989</span><span class="p">,</span><span class="o">-</span><span class="mf">190.35653</span><span class="p">,</span><span class="o">-</span><span class="mf">180.9243738</span><span class="p">,</span><span class="o">-</span><span class="mf">255.6224889</span><span class="p">,</span><span class="o">-</span><span class="mf">172.8141253</span><span class="p">,</span><span class="o">-</span><span class="mf">123.8350652</span><span class="p">,</span><span class="mf">60.05314983</span><span class="p">,</span><span class="mf">113.598307</span><span class="p">,</span><span class="mf">218.8144919</span><span class="p">,</span><span class="mf">238.6851057</span><span class="p">,</span><span class="mf">210.9383524</span><span class="p">,</span><span class="mf">36.94310365</span><span class="p">]</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="n">Vamu_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">87.06305005</span><span class="p">,</span><span class="mf">230.9299013</span><span class="p">,</span><span class="mf">148.431809</span><span class="p">,</span><span class="mf">128.4087423</span><span class="p">,</span><span class="o">-</span><span class="mf">88.67075769</span><span class="p">,</span><span class="o">-</span><span class="mf">84.47396366</span><span class="p">,</span><span class="o">-</span><span class="mf">298.5959647</span><span class="p">,</span><span class="o">-</span><span class="mf">181.4317592</span><span class="p">,</span><span class="o">-</span><span class="mf">241.2343437</span><span class="p">,</span><span class="o">-</span><span class="mf">37.53203788</span><span class="p">,</span><span class="o">-</span><span class="mf">30.63962885</span><span class="p">,</span><span class="mf">115.7064075</span><span class="p">,</span><span class="mf">87.06305005</span><span class="p">]</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="c1"># Vitis cinerea</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="n">Vcin_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">41.13786595</span><span class="p">,</span><span class="o">-</span><span class="mf">78.14668163</span><span class="p">,</span><span class="o">-</span><span class="mf">195.0747469</span><span class="p">,</span><span class="o">-</span><span class="mf">185.81005</span><span class="p">,</span><span class="o">-</span><span class="mf">238.1427795</span><span class="p">,</span><span class="o">-</span><span class="mf">181.5728492</span><span class="p">,</span><span class="o">-</span><span class="mf">127.6203541</span><span class="p">,</span><span class="mf">65.24059352</span><span class="p">,</span><span class="mf">103.8414516</span><span class="p">,</span><span class="mf">214.1320626</span><span class="p">,</span><span class="mf">233.1457326</span><span class="p">,</span><span class="mf">222.7549456</span><span class="p">,</span><span class="mf">41.13786595</span><span class="p">]</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="n">Vcin_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">98.40296936</span><span class="p">,</span><span class="mf">233.6652514</span><span class="p">,</span><span class="mf">136.6641628</span><span class="p">,</span><span class="mf">117.9719613</span><span class="p">,</span><span class="o">-</span><span class="mf">86.41814245</span><span class="p">,</span><span class="o">-</span><span class="mf">86.14771041</span><span class="p">,</span><span class="o">-</span><span class="mf">310.2979998</span><span class="p">,</span><span class="o">-</span><span class="mf">190.9232443</span><span class="p">,</span><span class="o">-</span><span class="mf">230.5027809</span><span class="p">,</span><span class="o">-</span><span class="mf">50.27050419</span><span class="p">,</span><span class="o">-</span><span class="mf">42.94757891</span><span class="p">,</span><span class="mf">107.8271097</span><span class="p">,</span><span class="mf">98.40296936</span><span class="p">]</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="c1"># Vitis coignetiae</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="n">Vcoi_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">36.29348151</span><span class="p">,</span><span class="o">-</span><span class="mf">51.46279315</span><span class="p">,</span><span class="o">-</span><span class="mf">183.6256382</span><span class="p">,</span><span class="o">-</span><span class="mf">176.7604659</span><span class="p">,</span><span class="o">-</span><span class="mf">253.3454527</span><span class="p">,</span><span class="o">-</span><span class="mf">191.8067468</span><span class="p">,</span><span class="o">-</span><span class="mf">123.413666</span><span class="p">,</span><span class="mf">66.11061054</span><span class="p">,</span><span class="mf">111.4950714</span><span class="p">,</span><span class="mf">215.7579824</span><span class="p">,</span><span class="mf">236.7136632</span><span class="p">,</span><span class="mf">197.5512918</span><span class="p">,</span><span class="mf">36.29348151</span><span class="p">]</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="n">Vcoi_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">86.42303732</span><span class="p">,</span><span class="mf">222.7808161</span><span class="p">,</span><span class="mf">150.0993737</span><span class="p">,</span><span class="mf">127.4697835</span><span class="p">,</span><span class="o">-</span><span class="mf">85.23634837</span><span class="p">,</span><span class="o">-</span><span class="mf">93.3122815</span><span class="p">,</span><span class="o">-</span><span class="mf">301.819185</span><span class="p">,</span><span class="o">-</span><span class="mf">203.7840759</span><span class="p">,</span><span class="o">-</span><span class="mf">239.8063423</span><span class="p">,</span><span class="o">-</span><span class="mf">35.30522815</span><span class="p">,</span><span class="o">-</span><span class="mf">25.15349577</span><span class="p">,</span><span class="mf">121.1295308</span><span class="p">,</span><span class="mf">86.42303732</span><span class="p">]</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="c1"># Vitis labrusca</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="n">Vlab_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">33.83997254</span><span class="p">,</span><span class="o">-</span><span class="mf">63.35703212</span><span class="p">,</span><span class="o">-</span><span class="mf">191.4861127</span><span class="p">,</span><span class="o">-</span><span class="mf">184.3259869</span><span class="p">,</span><span class="o">-</span><span class="mf">257.3706479</span><span class="p">,</span><span class="o">-</span><span class="mf">179.056825</span><span class="p">,</span><span class="o">-</span><span class="mf">124.0669143</span><span class="p">,</span><span class="mf">68.23202857</span><span class="p">,</span><span class="mf">123.213115</span><span class="p">,</span><span class="mf">222.8908464</span><span class="p">,</span><span class="mf">243.056641</span><span class="p">,</span><span class="mf">205.2845683</span><span class="p">,</span><span class="mf">33.83997254</span><span class="p">]</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="n">Vlab_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">81.34077013</span><span class="p">,</span><span class="mf">222.8158575</span><span class="p">,</span><span class="mf">153.7885633</span><span class="p">,</span><span class="mf">132.4995037</span><span class="p">,</span><span class="o">-</span><span class="mf">80.2253417</span><span class="p">,</span><span class="o">-</span><span class="mf">80.67586345</span><span class="p">,</span><span class="o">-</span><span class="mf">296.8245229</span><span class="p">,</span><span class="o">-</span><span class="mf">185.0516494</span><span class="p">,</span><span class="o">-</span><span class="mf">238.8655248</span><span class="p">,</span><span class="o">-</span><span class="mf">38.2316427</span><span class="p">,</span><span class="o">-</span><span class="mf">29.21879919</span><span class="p">,</span><span class="mf">111.424232</span><span class="p">,</span><span class="mf">81.34077013</span><span class="p">]</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="c1"># Vitis palmata</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="n">Vpal_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">31.97986731</span><span class="p">,</span><span class="o">-</span><span class="mf">68.77672824</span><span class="p">,</span><span class="o">-</span><span class="mf">189.26295</span><span class="p">,</span><span class="o">-</span><span class="mf">164.4563595</span><span class="p">,</span><span class="o">-</span><span class="mf">260.2149738</span><span class="p">,</span><span class="o">-</span><span class="mf">149.3150935</span><span class="p">,</span><span class="o">-</span><span class="mf">131.5419837</span><span class="p">,</span><span class="mf">65.86738801</span><span class="p">,</span><span class="mf">127.3624336</span><span class="p">,</span><span class="mf">202.6655429</span><span class="p">,</span><span class="mf">240.0477009</span><span class="p">,</span><span class="mf">219.0385121</span><span class="p">,</span><span class="mf">31.97986731</span><span class="p">]</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="n">Vpal_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">78.75737572</span><span class="p">,</span><span class="mf">232.9714762</span><span class="p">,</span><span class="mf">149.7873103</span><span class="p">,</span><span class="mf">124.8439354</span><span class="p">,</span><span class="o">-</span><span class="mf">71.09770423</span><span class="p">,</span><span class="o">-</span><span class="mf">56.52814058</span><span class="p">,</span><span class="o">-</span><span class="mf">329.0863141</span><span class="p">,</span><span class="o">-</span><span class="mf">149.308084</span><span class="p">,</span><span class="o">-</span><span class="mf">231.1263997</span><span class="p">,</span><span class="o">-</span><span class="mf">33.22358667</span><span class="p">,</span><span class="o">-</span><span class="mf">33.0517181</span><span class="p">,</span><span class="mf">114.3110289</span><span class="p">,</span><span class="mf">78.75737572</span><span class="p">]</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="c1"># Vitis piasezkii</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="n">Vpia_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">18.70342336</span><span class="p">,</span><span class="o">-</span><span class="mf">28.68239983</span><span class="p">,</span><span class="o">-</span><span class="mf">133.7834969</span><span class="p">,</span><span class="o">-</span><span class="mf">32.76128224</span><span class="p">,</span><span class="o">-</span><span class="mf">305.3467215</span><span class="p">,</span><span class="o">-</span><span class="mf">7.429223951</span><span class="p">,</span><span class="o">-</span><span class="mf">146.2207875</span><span class="p">,</span><span class="mf">21.81934547</span><span class="p">,</span><span class="mf">163.1265031</span><span class="p">,</span><span class="mf">65.21695943</span><span class="p">,</span><span class="mf">203.4902238</span><span class="p">,</span><span class="mf">139.6214571</span><span class="p">,</span><span class="mf">18.70342336</span><span class="p">]</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="n">Vpia_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">41.05946323</span><span class="p">,</span><span class="mf">160.3488167</span><span class="p">,</span><span class="mf">157.9775135</span><span class="p">,</span><span class="mf">64.93177072</span><span class="p">,</span><span class="o">-</span><span class="mf">59.68750782</span><span class="p">,</span><span class="mf">18.85909594</span><span class="p">,</span><span class="o">-</span><span class="mf">362.1788431</span><span class="p">,</span><span class="mf">7.556816875</span><span class="p">,</span><span class="o">-</span><span class="mf">253.8796355</span><span class="p">,</span><span class="mf">21.33965973</span><span class="p">,</span><span class="mf">17.69878265</span><span class="p">,</span><span class="mf">93.72614181</span><span class="p">,</span><span class="mf">41.05946323</span><span class="p">]</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="c1"># Vitis riparia</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="n">Vrip_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">44.65674776</span><span class="p">,</span><span class="o">-</span><span class="mf">85.47236587</span><span class="p">,</span><span class="o">-</span><span class="mf">205.1031097</span><span class="p">,</span><span class="o">-</span><span class="mf">174.088415</span><span class="p">,</span><span class="o">-</span><span class="mf">239.9704675</span><span class="p">,</span><span class="o">-</span><span class="mf">161.1277029</span><span class="p">,</span><span class="o">-</span><span class="mf">125.4900046</span><span class="p">,</span><span class="mf">58.08609552</span><span class="p">,</span><span class="mf">89.2307808</span><span class="p">,</span><span class="mf">204.9127104</span><span class="p">,</span><span class="mf">236.0709257</span><span class="p">,</span><span class="mf">229.8098573</span><span class="p">,</span><span class="mf">44.65674776</span><span class="p">]</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="n">Vrip_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">106.5948187</span><span class="p">,</span><span class="mf">235.8791214</span><span class="p">,</span><span class="mf">130.341464</span><span class="p">,</span><span class="mf">116.8318515</span><span class="p">,</span><span class="o">-</span><span class="mf">110.5506636</span><span class="p">,</span><span class="o">-</span><span class="mf">76.73562488</span><span class="p">,</span><span class="o">-</span><span class="mf">300.1092173</span><span class="p">,</span><span class="o">-</span><span class="mf">169.0146383</span><span class="p">,</span><span class="o">-</span><span class="mf">247.0956802</span><span class="p">,</span><span class="o">-</span><span class="mf">42.2253331</span><span class="p">,</span><span class="o">-</span><span class="mf">54.23469169</span><span class="p">,</span><span class="mf">103.9732427</span><span class="p">,</span><span class="mf">106.5948187</span><span class="p">]</span>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="c1"># Vitis rupestris</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="n">Vrup_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">51.29642881</span><span class="p">,</span><span class="o">-</span><span class="mf">132.9650549</span><span class="p">,</span><span class="o">-</span><span class="mf">227.6059714</span><span class="p">,</span><span class="o">-</span><span class="mf">201.31783</span><span class="p">,</span><span class="o">-</span><span class="mf">207.965755</span><span class="p">,</span><span class="o">-</span><span class="mf">149.2265432</span><span class="p">,</span><span class="o">-</span><span class="mf">98.64097334</span><span class="p">,</span><span class="mf">48.33648281</span><span class="p">,</span><span class="mf">75.91437502</span><span class="p">,</span><span class="mf">208.7784453</span><span class="p">,</span><span class="mf">237.4842778</span><span class="p">,</span><span class="mf">263.3479415</span><span class="p">,</span><span class="mf">51.29642881</span><span class="p">]</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="n">Vrup_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">123.7557878</span><span class="p">,</span><span class="mf">233.5830974</span><span class="p">,</span><span class="mf">109.6847731</span><span class="p">,</span><span class="mf">95.43848563</span><span class="p">,</span><span class="o">-</span><span class="mf">95.82512925</span><span class="p">,</span><span class="o">-</span><span class="mf">80.06286127</span><span class="p">,</span><span class="o">-</span><span class="mf">236.7411071</span><span class="p">,</span><span class="o">-</span><span class="mf">163.7331427</span><span class="p">,</span><span class="o">-</span><span class="mf">213.2925544</span><span class="p">,</span><span class="o">-</span><span class="mf">77.04510916</span><span class="p">,</span><span class="o">-</span><span class="mf">86.40789274</span><span class="p">,</span><span class="mf">69.86940263</span><span class="p">,</span><span class="mf">123.7557878</span><span class="p">]</span>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="c1"># Vitis thunbergii</span>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="n">Vthu_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">22.61260382</span><span class="p">,</span><span class="o">-</span><span class="mf">3.204532702</span><span class="p">,</span><span class="o">-</span><span class="mf">150.3627277</span><span class="p">,</span><span class="o">-</span><span class="mf">79.39836351</span><span class="p">,</span><span class="o">-</span><span class="mf">271.8885204</span><span class="p">,</span><span class="o">-</span><span class="mf">70.74704134</span><span class="p">,</span><span class="o">-</span><span class="mf">168.6002498</span><span class="p">,</span><span class="mf">36.68300146</span><span class="p">,</span><span class="mf">172.978549</span><span class="p">,</span><span class="mf">116.9174032</span><span class="p">,</span><span class="mf">227.8346055</span><span class="p">,</span><span class="mf">148.3453958</span><span class="p">,</span><span class="mf">22.61260382</span><span class="p">]</span>
+</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="n">Vthu_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">50.82336098</span><span class="p">,</span><span class="mf">194.3865012</span><span class="p">,</span><span class="mf">181.2536906</span><span class="p">,</span><span class="mf">86.8671412</span><span class="p">,</span><span class="o">-</span><span class="mf">57.33457233</span><span class="p">,</span><span class="o">-</span><span class="mf">23.85610668</span><span class="p">,</span><span class="o">-</span><span class="mf">334.279317</span><span class="p">,</span><span class="o">-</span><span class="mf">67.36542042</span><span class="p">,</span><span class="o">-</span><span class="mf">234.1205595</span><span class="p">,</span><span class="mf">7.151772223</span><span class="p">,</span><span class="mf">28.16801823</span><span class="p">,</span><span class="mf">138.9705667</span><span class="p">,</span><span class="mf">50.82336098</span><span class="p">]</span>
+</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>
+</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="c1"># Vitis vulpina</span>
+</span><span id="__span-2-68"><a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="n">Vvul_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">39.44771371</span><span class="p">,</span><span class="o">-</span><span class="mf">83.62933643</span><span class="p">,</span><span class="o">-</span><span class="mf">194.2000993</span><span class="p">,</span><span class="o">-</span><span class="mf">175.9638941</span><span class="p">,</span><span class="o">-</span><span class="mf">227.8323987</span><span class="p">,</span><span class="o">-</span><span class="mf">180.8587446</span><span class="p">,</span><span class="o">-</span><span class="mf">135.986247</span><span class="p">,</span><span class="mf">71.94543538</span><span class="p">,</span><span class="mf">99.8983207</span><span class="p">,</span><span class="mf">207.0950158</span><span class="p">,</span><span class="mf">231.7808734</span><span class="p">,</span><span class="mf">222.7645396</span><span class="p">,</span><span class="mf">39.44771371</span><span class="p">]</span>
+</span><span id="__span-2-69"><a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="n">Vvul_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">96.44934373</span><span class="p">,</span><span class="mf">230.0148139</span><span class="p">,</span><span class="mf">136.3702366</span><span class="p">,</span><span class="mf">119.8017341</span><span class="p">,</span><span class="o">-</span><span class="mf">83.09830126</span><span class="p">,</span><span class="o">-</span><span class="mf">75.38247957</span><span class="p">,</span><span class="o">-</span><span class="mf">332.9188424</span><span class="p">,</span><span class="o">-</span><span class="mf">184.4324688</span><span class="p">,</span><span class="o">-</span><span class="mf">222.8532423</span><span class="p">,</span><span class="o">-</span><span class="mf">41.89574792</span><span class="p">,</span><span class="o">-</span><span class="mf">44.70218529</span><span class="p">,</span><span class="mf">101.9138055</span><span class="p">,</span><span class="mf">96.44934373</span><span class="p">]</span>
+</span><span id="__span-2-70"><a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>
+</span><span id="__span-2-71"><a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="c1"># Average grape leaf</span>
+</span><span id="__span-2-72"><a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="n">avg_x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">35.60510804</span><span class="p">,</span><span class="o">-</span><span class="mf">67.88314703</span><span class="p">,</span><span class="o">-</span><span class="mf">186.9749654</span><span class="p">,</span><span class="o">-</span><span class="mf">149.5049396</span><span class="p">,</span><span class="o">-</span><span class="mf">254.2293735</span><span class="p">,</span><span class="o">-</span><span class="mf">135.3520852</span><span class="p">,</span><span class="o">-</span><span class="mf">130.4632741</span><span class="p">,</span><span class="mf">54.4100207</span><span class="p">,</span><span class="mf">120.7064692</span><span class="p">,</span><span class="mf">180.696724</span><span class="p">,</span><span class="mf">232.2550642</span><span class="p">,</span><span class="mf">204.8782463</span><span class="p">,</span><span class="mf">35.60510804</span><span class="p">]</span>
+</span><span id="__span-2-73"><a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="n">avg_y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">84.95317026</span><span class="p">,</span><span class="mf">215.7238025</span><span class="p">,</span><span class="mf">143.85314</span><span class="p">,</span><span class="mf">106.742536</span><span class="p">,</span><span class="o">-</span><span class="mf">80.06000256</span><span class="p">,</span><span class="o">-</span><span class="mf">57.00477464</span><span class="p">,</span><span class="o">-</span><span class="mf">309.8290405</span><span class="p">,</span><span class="o">-</span><span class="mf">137.6340316</span><span class="p">,</span><span class="o">-</span><span class="mf">237.7960327</span><span class="p">,</span><span class="o">-</span><span class="mf">31.10365842</span><span class="p">,</span><span class="o">-</span><span class="mf">30.0828468</span><span class="p">,</span><span class="mf">103.1501279</span><span class="p">,</span><span class="mf">84.95317026</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Y finalmente hablemos de subgráficas. ¿Y si quisiéramos crear una gráfica? pero tenía múltiples paneles, múltiples gráficas
+dentro de una misma figura, y aquí es donde las subgráficas entran en juego. </p>
+<p>No mentiré, el código de las subgráficas es un poco complicado. Yo mismo a menudo, simplemente vaya y búsquelo cada vez que quiera usarlo y usted debería hacer lo mismo. Lo pondré en los cuadernos siempre que lo necesite en la clase, pero esta es la general esbozo de cómo se ve una subgráfica. Repasemos esto para que sepamos cómo usarlo cuando se necesite. </p>
+<p>Una forma alternativa de crear una gráfica en matplotlib es crear una variable esa es tu figura. Entonces puede usar una función llamada <code>plt.figure()</code> y asignarla a una variable. Normalmente lo llamamos <code>fig</code> donde guardas todos los elementos de tu figura. Puedes poner otro atributos en esto. Por ejemplo <code>figsize</code>. Esto significa crear una figura de 10 por 10 pulgadas, usando este argumento cuando creamos la figura en sí.</p>
+<p>Una vez que tengas tu figura, luego usa la función punto subplots (".subplots") para crear lo que llamamos una matriz. Y entonces lo que estamos haciendo aquí estamos modificando la figura que acabamos de crear usando la función "subplots". Lo mas lo importante que debe saber sobre las subgráficas es que debe especificar cuántas subgráficasdesea. Entonces en este caso, creemos una subgráfica de dos por dos. Por lo tanto, siempre se trata de filas primero seguidas de columnas. Entonces esta es una subgráfica de 2x2. Recuerde: filas seguidas de columnas. Esto está creando otra variable y se llama array (arreglo) y, básicamente, lo que hemos hecho aquí es que aprendiste sobre indexación antes, cómo si tiene una lista, por ejemplo, hay un comienzo y un final, y cada elemento en esa lista tiene un número y un índice asociados. Este es un esquema de indexación de dos dimensiones en esencia. Recuerde que estábamos especificando dos filas y dos columnas y eso es básicamente lo que esta variable es, una array.</p>
+<p>Una vez que tenemos estas dos líneas de código, hemos creado nuestros subgráficos y podemos entrar al negocio creando nuestro subgráfico. Puede modificar la figura directamente, por lo que, esto se llama "superior title", el título en la parte superior de la figura general , porque modifica la figura directamente. Vamos a llamar a nuestro título de figura general "La forma de las hojas de vid". Podemos darle un tamaño de fuente y modificarlo como queramos.</p>
+<p>Pero para crear las subgráficas, aquí es donde ocurre toda la magia. Tú creaste este array antes y recuerde que esta es una indexación bidimensional, por lo que, las filas, el primer valor separado por una coma, entre corchetes, porque hay dos. Hay cero y uno. Es la fila superior o inferior, 0 o 1. El segundo valor se referirá a las columnas que van de izquierda a derecha. Es la primera columna, 0, o es la segunda, 1. Entonces, podemos referirnos a una de las subgráficas: tenemos cuatro de ellas, ¿verdad? en la esquina superior izquierda como 0, 0; el de la esquina superior derecha es 0, 1; el único en la esquina inferior izquierda como 1, 0; y el de la esquina inferior derecha como 1, 1. Cuando se indexa bidimensionalmente, indexando el objeto de matriz de esta manera, por <code>[0, 0]</code> por ejemplo, las funciones que usa, <code>.plot()</code>, <code>.fill()</code>, <code>.scatter()</code>, todas modificarán solo en una subgráfica. Entonces puedes hacer <code>.plot()</code>, <code>.fill()</code>, <code>.scatter()</code>. Puede establecer un título incluso para esta subgráfica. Puede modificar su relación de aspecto, apagar y encender el eje.</p>
+<p>Por ejemplo, esto es la trama que crearemos en la esquina superior izquierda de nuestra subgráfica. Y nuevamente, simplemente crea la trama que le gustaría para la esquina superior derecha, la esquina inferior izquierda y la esquina inferior derecha. Puedes ver que esto es mucho código e hicimos muchas cosas aquí. Creamos un objeto de figura, luego modificamos el objeto de figura con subgráficas para crear un array. Este array nos permite a través de la indexación bidimensional para referirnos a cada una de las gráficas que queremos crear.</p>
+<p>Así que esto es mucho, pero siempre puedes buscar el esqueleto de cómo hacer subgráficasen línea y simplemente copiarlo y pegarlo desde que lo usó antes o incluso en este cuaderno. Así que ejecutemos la celda y así es como se ve. Así que creamos la figura general, podemos crear un título para la figura general, "Las formas de las hojas de vid". Pero debido a que creamos este array con dos filas y dos columnas, donde las filas son cero y uno y las columnas son cero y uno, cuando nos referimos a un índice en ese objeto de array, podemos modificar cada uno de estos gráficos como queramos. Así que esto crea una única figura general con subgráficas y así es como podemos controlar y crear diferentes gráficas dentro de una figura general.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Crea una variable &quot;fig&quot; usando plt.figure ()</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Puede usar figsize para ajustar el tamaño</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Luego, use la función .subplots () en su nueva fig.</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Especifique cuántas filas y cuántas columnas separadas por una coma</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Esto es indexar en 2 dimensiones: una matriz</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Esto crea una matriz que contiene cada una de sus subtramas</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Cada gráfico está indexado por fila, columna</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">ax_array</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># Puedes darle un título a tu figura general</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># modificando fig con .suptitle ()</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;The shapes of grapevine leaves&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># Luego, usando la indexación, consulte cada subparcela en su matriz</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1"># Especifique la forma en que desea cada parcela de forma independiente</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Aaco_x</span><span class="p">,</span> <span class="n">Aaco_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Aaco_x</span><span class="p">,</span> <span class="n">Aaco_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Aaco_x</span><span class="p">,</span> <span class="n">Aaco_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;limegreen&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Ampelopsis aconitifolia&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;datalim&quot;</span><span class="p">)</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Abre_x</span><span class="p">,</span> <span class="n">Abre_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span> 
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Abre_x</span><span class="p">,</span> <span class="n">Abre_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;peru&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> 
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Abre_x</span><span class="p">,</span> <span class="n">Abre_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> 
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Ampelopsis brevipedunculata&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;datalim&quot;</span><span class="p">)</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Acor_x</span><span class="p">,</span> <span class="n">Acor_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Acor_x</span><span class="p">,</span> <span class="n">Acor_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;limegreen&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Acor_x</span><span class="p">,</span> <span class="n">Acor_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Ampelopsis cordata&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;datalim&quot;</span><span class="p">)</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Vace_x</span><span class="p">,</span> <span class="n">Vace_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkorchid&quot;</span><span class="p">)</span> 
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Vace_x</span><span class="p">,</span> <span class="n">Vace_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gold&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> 
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Vace_x</span><span class="p">,</span> <span class="n">Vace_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;peru&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> 
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Vitis acerifolia&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;italic&quot;</span><span class="p">)</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;datalim&quot;</span><span class="p">)</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="n">ax_array</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="png" src="../assets/output_2_4/output_9_1.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ES_2.3_Leyendas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2.3 Leyendas">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2.3 Leyendas
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ES_2_practice/" class="md-footer__link md-footer__link--next" aria-label="Next: Práctica">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Práctica
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan Chitwood, Alejandra Rougon-Cardoso, Robert VanBuren
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@DanChitwood" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://plantsandpython.github.io/PlantsAndPython/00_Opening_page.html" target="_blank" rel="noopener" title="plantsandpython.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

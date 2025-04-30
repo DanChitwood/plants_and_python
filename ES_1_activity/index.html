@@ -1,0 +1,4945 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal">
+      
+      
+        <meta name="author" content="Dan Chitwood">
+      
+      
+        <link rel="canonical" href="https://danchitwood.github.io/plants_and_python/ES_1_activity/">
+      
+      
+        <link rel="prev" href="../ES_1_practice/">
+      
+      
+        <link rel="next" href="../ES_2.00_Ilustracion_de_portada_2/">
+      
+      
+      <link rel="icon" href="../assets/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Las plantas y el clima - Plants&Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Las plantas y el clima - Plants&Python" >
+      
+        <meta  property="og:description"  content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal" >
+      
+        <meta  property="og:image"  content="https://danchitwood.github.io/plants_and_python/assets/images/social/ES_1_activity.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://danchitwood.github.io/plants_and_python/ES_1_activity/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Las plantas y el clima - Plants&Python" >
+      
+        <meta  name="twitter:description"  content="a series of lessons in coding and plant biology / una serie de lecciones de programación y biología vegetal" >
+      
+        <meta  name="twitter:image"  content="https://danchitwood.github.io/plants_and_python/assets/images/social/ES_1_activity.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#actividad-1-las-plantas-y-el-clima" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Plants&amp;Python" class="md-header__button md-logo" aria-label="Plants&Python" data-md-component="logo">
+      
+  <img src="../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plants&Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Las plantas y el clima
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DanChitwood/plants_and_python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DanChitwood/plants_and_python
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Welcome | Bienvenid@
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00_Installing_Anaconda/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started | Empezando
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../OAXACA_workshop/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quick start
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1.00_Cover_image_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lessons in English
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ES_1.00_Ilustracion_de_portada_1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lecciones en español
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../00_class_publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Class publications
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Plants&amp;Python" class="md-nav__button md-logo" aria-label="Plants&Python" data-md-component="logo">
+      
+  <img src="../assets/icon.png" alt="logo">
+
+    </a>
+    Plants&Python
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DanChitwood/plants_and_python" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DanChitwood/plants_and_python
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Welcome | Bienvenid@
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Welcome | Bienvenid@
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting started | Empezando
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started | Empezando
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_Installing_Anaconda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation | Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Coding_cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Coding cells | celdas de código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_Markdown_cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown cells | celdas de markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OAXACA_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lessons in English
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons in English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Variables, Lists & Indexing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            1. Variables, Lists & Indexing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.00_Cover_image_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.0_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.1_Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1 Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.2_Indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2 Indexing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.3_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3 Lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.4_Indexing_List_Elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4 Indexing list elements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.5_Modifying_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5 Modifying lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.6_List_of_Lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6 List of lists
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.7_Slicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7 Slicing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.8_Data_Types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8 Data types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plants & climate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Visualizing Data with Matplotlib
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. Visualizing Data with Matplotlib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.00_Cover_image_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.0_Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1_Plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Plots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2_Shape_Size_and_Color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 Shape, size, and color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3_Legends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 Legends
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4_Subplots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subplots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Leaf & sunflower shapes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Loops & the Golden Angle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. Loops & the Golden Angle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.00_Cover_image_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.0_Range_Function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0 Range function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1_For_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1 For loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2_Counters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2 Counters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.3_Using_Lists_and_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3 Using lists and loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4_Calculating_Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4 Calculating Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.5_While_Loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5 While loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modeling sunflowers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Data Analysis with Pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Data Analysis with Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.00_Cover_image_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.0_Reading_in_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0 Reading in data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.1_Head_and_Tail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1 Head and tail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2_Selecting_Columns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2 Selecting columns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.3_Descriptive_Statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3 Descriptive statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.4_Masks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4 Masks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.5_Using_iloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5 Using iloc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.6_Seaborn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6 Seaborn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grapes in a warming world
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    5. UNIX command line
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            5. UNIX command line
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.00_Cover_image_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cover illustration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.0_Introduction_to_Command_Line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.0 Introduction to command line
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1_TheVirtual_Terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 Virtual terminal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2_Exploring_Folders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Exploring folders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3_Working_with_Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3 Working with files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4_Options_and_Arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4 Options and arguments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5_Copy_Move_and_Remove_Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5 Copy, move & remove files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    6. UNIX commands for data mining
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            6. UNIX commands for data mining
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.0_Edit_Sort_Cut_grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.0 edit, sort, cut & grep
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.1_Word_Count_Pipelines_Permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.1 Word count, pipelines & permissions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.2_Biological_Data_Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.2 Biological data formats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    7. Scripting with bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            7. Scripting with bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.0_WorkingRemotely/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.0 Working remotely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.1_Scripting_with_bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1 Scripting with bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.2_Summary_of_Commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2 Summary of commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    8. Genomics and Biopython
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            8. Genomics and Biopython
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.0_Intro_to_Genomics_and_Biopython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8.0 Intro to plant genomics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.1_HPCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8.1 Using the HPCC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    9. Comparative genomics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            9. Comparative genomics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.0_Comp_Genomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9.0 Comparative genomics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    10. RNASeq analysis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            10. RNASeq analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.0_RNAseq_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10.0 Short read analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    11. Variant discovery
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            11. Variant discovery
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.0_Variant_Discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11.0 Identifying variants
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lecciones en español
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Lecciones en español
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    1. Variables, listas y indexación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            1. Variables, listas y indexación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.00_Ilustracion_de_portada_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.0_Variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.0 Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.1_Funciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.1 Funciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.2_Indexacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.2 Indexación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.3_Listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.3 Listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.4_Indexando_los_elementos_de_una_lista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.4 Indexando los elementos de una lista
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.5_Modificando_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.5 Modificando listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.6_Lista_de_listas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.6 Lista de listas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.7_Rebanar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.7 Rebanar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1.8_Tipos_de_datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.8 Tipos de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_1_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Las plantas y el clima
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las plantas y el clima
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-planta" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es una planta?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viridiplantae-las-plantas-verdes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viridiplantae, las plantas verdes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Viridiplantae, las plantas verdes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chlorophyta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chlorophyta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charophyta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Charophyta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embryophyta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embryophyta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embryophyta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#briofitas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Briofitas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pteridofitas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pteridofitas 🌿
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gimnospermas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gimnospermas 🌲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angiospermas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Angiospermas 🌸
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-de-plantas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lista de plantas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-del-clima" class="md-nav__link">
+    <span class="md-ellipsis">
+      Índice del clima
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2. Visualización de datos con matplotlib
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            2. Visualización de datos con matplotlib
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.00_Ilustracion_de_portada_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.0_Modulos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.0 Módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.1_Graficos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 Gráficos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.2_Forma_tamano_y_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 Forma, tamaño y color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.3_Leyendas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 Leyendas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2.4_Subgraficos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 Subgráficos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_2_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Las formas de las hojas y girasoles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3. Loops y el ángulo dorado
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            3. Loops y el ángulo dorado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.00_Ilustracion_de_portada_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.0_La_funcion_range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.0 La función range
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.1_Loops_for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.1 Loops for
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.2_Contadores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.2 Contadores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.3_Usando_listas_y_loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.3 Usando listas y loops
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.4_Calcular_Fibonacci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.4 Calcular Fibonacci
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3.5_Loops_while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.5 Loops while
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_3_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cómo construir un girasol
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    4. Análisis de datos con pandas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            4. Análisis de datos con pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.00_Ilustracion_de_portada_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.0_Leyendo_en_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.0 Leyendo en data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.1_Head_y_tail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.1 Head y tail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.2_Seleccionando_columnas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.2 Seleccionando columnas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.3_Estadisticas_descriptivas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.3 Estadísticas descriptivas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.4_Enmascaramiento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.4 Enmascaramiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.5_Usando_iloc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.5 Usando iloc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4.6_Seaborn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.6 Seaborn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4_practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_4_activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vides en un mundo que se calienta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    5. Línea de comandos de UNIX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            5. Línea de comandos de UNIX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.00_Ilustracion_de_portada_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ilustración de portada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.0_IntroduccionLineaDeComandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.0 Introducción a la línea de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.1_LaTerminal_Virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.1 Terminal virtual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.2_ExplorandoDirectorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.2 Explorando directorios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.3_Trabajando_con_archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.3 Trabajando con archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.4_Opciones_y_Argumentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.4 Opciones y argumentos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_5.5_Copiar_Mover_Eliminar_Archivos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.5 Copiar, mover y eliminar archivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    6.0 Minería de datos en la línea de comandos de UNIX
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            6.0 Minería de datos en la línea de comandos de UNIX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.0_Editar_Ordentar_Cortar_grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.0 Editar, ordenar, cortar y grep
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.1_Contar_Palabras_Tuberias_Permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.1 Contar palabras, tuberías y permisos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_6.2_Formatos_Biologicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.2 Formatos de datos biológicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    7.0 Programmando con bash
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            7.0 Programmando con bash
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.0_Trabajando_de_manera_remota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.0 Trabajando de manera remota
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.1_Programando_con_Bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.1 Programando con bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ES_7.2_Resumen_de_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.2 Resumen de comandos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00_class_publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class publications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="actividad-1-las-plantas-y-el-clima">Actividad 1: Las plantas y el clima</h1>
+<p><strong><em>Traducción por Pablo Y. Rosiles-Loeza (Langebio-Cinvestav, Irapuato, Gto., México)</em></strong></p>
+<hr />
+<h2 id="que-es-una-planta">¿Qué es una planta?</h2>
+<p>La humanidad tiene una relación íntima con las plantas. A través de la fotosíntesis, las plantas son la fuente última de casi todos los alimentos que los humanos consumen. Las plantas son la fuente de muchos productos medicinales, así como de sustancias psicoactivas religiosas y recreativas. Además proporcionan fibras para hacer nuestra ropa y materiales estructurales para edificios. A partir del año 10.000 a.C., la humanidad comenzó a domesticar diferentes cultivares. El cultivo de especies de plantas que habían sido alteradas drásticamente por los humanos (debido principalmente al proceso de domesticación) aumentó las calorías disponibles e impulsó el crecimiento de las civilizaciones en todo el mundo.</p>
+<p>Como las plantas son tan diversas y varían en la composición de sus comunidades en todo el mundo, la definición de "planta" es culturalmente específica y refleja la relación de una cultura con la flora local. Aquí vamos a centrarnos en una definición científica de las plantas. Una característica que define a las plantas es que son autótrofas: es decir, son capaces de sintetizar su alimento a partir de sustancias inorgánicas. La fotosíntesis es el proceso por el que las plantas y otros organismos convierten el agua y el dióxido de carbono en carbohidratos, utilizando la luz solar como energía. Las cianobacterias son un grupo de bacterias existentes que también realizan fotosíntesis. Se especula que hace mucho tiempo una cianobacteria fue engullida por un eucariota unicelular (un organismo con un núcleo que contiene la mayor parte de su ADN). La cianobacteria y la eucariota desarrollaron una simbiosis, en la que la cianobacteria engullida permaneció en la célula eucariota proporcionando carbohidratos derivados de la fotosíntesis. A través de esta endosimbiosis, la cianobacteria evolucionó hasta convertirse en un cloroplasto, un orgánulo dentro de las células vegetales donde se produce la fotosíntesis. </p>
+<p>De este único evento endosimbiótico surgieron todas las plantas (y su cianobacteria capturada que proporciona la fotosíntesis en sus células como cloroplasto). Los descendientes de la célula simbiótica se denominan Archaeplastida ("antiguo" + "plástido"). Los Archaeplastida constan de tres grupos principales: Glaucophyta (glaucofitas), Rhodophyta (algas rojas) y Viridiplantae (plantas verdes). Las glaucofitas son un pequeño grupo de algas unicelulares de agua dulce de las que sólo se han descrito 15 especies. Las algas rojas son en su mayoría multicelulares y marinas. Se han descrito más de 7.000 especies. Poseen hermosas arquitecturas ramificadas y un característico color rojo que surge de los pigmentos accesorios fotosintéticos llamados ficobiliproteínas, que captan la energía luminosa que pasa a las moléculas de clorofila. El último grupo es el de las Viridiplantae, o las "plantas verdes". A continuación se describen brevemente los principales grupos de plantas verdes. </p>
+<hr />
+<h2 id="viridiplantae-las-plantas-verdes">Viridiplantae, las plantas verdes</h2>
+<p>Las plantas verdes se componen de dos grandes grupos: la Chlorophyta y la Charophyta (algas de agua dulce) + Embryophyta (plantas terrestres)</p>
+<h4 id="chlorophyta">Chlorophyta</h4>
+<p>La Chlorophyta ("verde" + "planta") se separó del linaje de las plantas terrestres (Embryophyta) y de las algas de agua dulce (Charophyta)hace unos 1.200 a 725 millones de años. A diferencia de las plantas terrestres, la espectacular diversidad de las clorofitas está infravalorada. Existen unas 4.000 especies de Chlorophyta que habitan principalmente en hábitats marinos, pero también de agua dulce y terrestres. La complejidad macroscópica surgió en múltiples ocasiones en Chlorophyta, a través de la multicelularidad (por ejemplo, la lechuga de mar, <em>Ulva</em>), las colonias multicelulares (<em>Volvox</em>) y los organismos gigantes unicelulares (algas como <em>Caulerpa</em> y <em>Acetabularia</em>). Al igual que las plantas terrestres, algunas clorofitas llegaron a la tierra de forma independiente, mediante simbiosis. Los líquenes son organismos simbióticos terrestres que surgen de la interacción entre un hongo y un socio fotosintético. Éste fotobionte suele ser un alga clorofítica, pero también puede incluir cianobacterias u otras algas (o combinaciones de ellas).</p>
+<h4 id="charophyta">Charophyta</h4>
+<p>Las carofitas son algas complejas de agua dulce. Existen entre 2.800 y 6.000 especies de carófitos. Las plantas terrestres (Embryophyta) probablemente surgieron de un ancestro Charophycean, aunque sigue siendo discutible de cuál concretamente. Los carófitos reciben su nombre de <em>Chara</em>, un alga multicelular que se se asemeja superficialmente a las plantas terrestres, con estructuras similares a tallos y hojas. El <em>Choleochaete</em> es otra alga multicelular que forma un disco plano y con muchas características de las plantas terrestres, incluyendo la retención de cigotos después de la fertilización y los plasmodesmos (conexiones citoplasmáticas entre células adyacentes). Sorpresivamente, estas características probablemente surgieron de manera independientemente a las plantas terrestres.</p>
+<h3 id="embryophyta">Embryophyta</h3>
+<h4 id="briofitas">Briofitas</h4>
+<p>Las briofitas son plantas no vasculares, lo que significa que no tienen un verdadero tejido vascular que contenga lignina (un polímero rígido que es vital para el crecimiento erecto de las plantas vasculares). Las briofitas se dividen en tres grupos: las hepáticas (Marchantiophyta, de 6.000 a 8.000 especies), los antocerotes (Anthocerotophyta, de 100 a 200 especies) y los musgos (Bryophyta, 12.000 especies). Todas las plantas se caracterizan por la "alteración de las generaciones": alternan entre gametofitos haploides con un solo juego de cromosomas que surgen de las esporas y producen gametos, y esporofitos diploides con dos juegos de cromosomas que surgen por la fusión de dos gametos y producen esporas. En las briofitas, el estadio de vida más grande y longevo es el gametofito (a diferencia de otras plantas terrestres, en las que el esporofito es el estadio de vida dominante). A diferencia de los elaborados esporofitos de otras plantas terrestres, los esporofitos de las briofitas no están ramificados.</p>
+<h4 id="pteridofitas">Pteridofitas 🌿</h4>
+<p>Las pteridofitas son plantas vasculares, con verdaderos tejidos de xilema (transporte de agua y nutrientes) y floema (transporte de compuestos orgánicos solubles producidos durante la fotosíntesis). Las pteridofitas también son plantas sin semillas. Aunque el estadio de esporofito diploide es dominante, el gametofito es más prominente que la mayoría de las plantas con semillas. Las pteridofitas comprenden las Lycopodiophyta (musgos, 1.200 especies) y las Pteridophyta (helechos, helechos batidores y colas de caballo, 11.000 especies). Los helechos tienen hojas muy elaboradas, llamadas megafilos, que están muy ramificados. Estas hojas se desarrollan de forma acrópeta (de la punta a la base) y se despliegan a partir de una estructura llamada "cabeza de chorlito (fiddlehead, en inglés)". La historia evolutiva de los helechos es complicada y elaborada, y es probable que los megafilos hayan evolucionado varias veces, independientemente de los demás y de las hojas de las gimnospermas y las angiospermas.</p>
+<h4 id="gimnospermas">Gimnospermas 🌲</h4>
+<p>Las gimnospermas son plantas con semillas. El nombre de gimnosperma significa "semilla desnuda", y se refiere al óvulo no cerrado que es fecundado para producir la semilla. Las semillas se desarrollan en la superficie de las hojas, en las escamas de los conos o en solitario. Las coníferas (Pinophyta, 630 especies) y las cícadas (Cycadophyta, 160 especies) son los grupos de gimnospermas dominantes. Gnetophyta (70 especies) incluye los géneros <em>Gnetum</em> (árboles tropicales de hoja perenne, arbustos, lianas), <em>Ephedra</em> (incluyendo especies con propiedades medicinales y "té mormón"), y <em>Welwitschia</em> (endémica del desierto de Namibia y que produce dos hojas opuestas y permanentes que crecen desde la base). La Ginkgophyta sólo contiene una especie: <em>Ginkgo biloba</em>.</p>
+<h4 id="angiospermas">Angiospermas 🌸</h4>
+<p>Las angiospermas son las plantas con flores. El nombre de angiosperma deriva de "carcasa" y "semilla". A diferencia de las gimnospermas, las angiospermas producen semillas dentro de un ovario. Las angiospermas se caracterizan por tener flores, endospermo dentro de las semillas y frutos que las contienen. Se conocen más de 300.000 especies de plantas con flores. Las primeras plantas con flores surgieron hace 160 millones de años, se diversificaron rápidamente y sustituyeron a las coníferas como árboles dominantes hace ~ 100-60 millones de años.</p>
+<p>Los principales grupos de angiospermas son las magnolíticas (9.000 especies, entre las que se encuentran las magnolias, el laurel, la pimienta negra y el aguacate 🥑), las monocotiledóneas (70.000 especies, entre las que se encuentran el arroz 🌾, el plátano 🍌, la piña 🍍, el maíz 🌽, el coco 🥥, las palmeras 🌴 y los tulipanes 🌷) y las eudicotas (175.000 especies). Las eudicotas se componen de dos grandes grupos, las rosáceas (que incluyen los pepinos 🥒, la fresa 🍓, las cerezas 🍒, los melocotones 🍑, las peras 🍐, las manzanas 🍎, los limones 🍋, las naranjas 🍊, sandía 🍉, y melón 🍈) y Asteridáceas (entre las que se encuentran las zanahorias 🥕, las patatas 🥔, los kiwis 🥝, los pimientos 🌶, las berenjenas 🍆, los tomates 🍅, y el girasol 🌻).</p>
+<p>Las características típicas de las monocotiledóneas son un solo cotiledón (u hoja de la semilla), flores con tres pétalos, polen con un solo poro y, a menudo, hojas con venación paralela. Las características típicas de las dicotiledóneas son dos cotiledones, flores con cuatro o cinco pétalos, polen con tres poros y, normalmente, hojas con venación ramificada.</p>
+<p><img alt="Haeckel.jpg" src="../assets/prac_imgs/Haeckel.jpg" /></p>
+<p><img alt="Plant_evolution.jpg" src="../assets/prac_imgs/Plant_evolution.jpg" /></p>
+<hr />
+<h2 id="lista-de-plantas">Lista de plantas</h2>
+<p>Habrás observado que las plantas se describen de forma jerárquica. Hay un gran grupo único (las plantas) que se subdivide cada vez más hasta llegar al nivel de las especies. Por ejemplo, las uvas se clasifican de la siguiente manera: Plantae, Angiospermas, Eudicotas, Rosidas, Orden Vitales, Familia Vitaceae, Género <em>Vitis</em>, Especie <em>V. vinifera</em>. El nombre de la especie se compone del nombre del género (abreviado tras su primer uso) y del epíteto de la especie.</p>
+<p>Acabamos de cubrir la historia evolutiva de todas las plantas, pero las plantas con flor son especialmente numerosas y diversas y la fuente de nuestros principales cultivos.</p>
+<p>Este <a href="http://danchitwood.github.io/CropPhylogeny/">gráfico</a> interactivo muestra la clasificación taxonómica anidada de las especies de cultivos de angiospermas, donde los círculos representan la producción en toneladas de cada cultivo en 2011 (datos de <a href="http://www.fao.org/home/en">aquí</a>). Los cultivos están dentro de círculos que denotan familias de plantas (que siempre terminan con "-aceae").</p>
+<p>En la lección anterior, aprendiste a indexar y crear listas (¡y a crear e indexar una lista de listas!). En la celda de abajo, crea una lista de listas con tres niveles:</p>
+<ul>
+<li>El primer nivel de tu lista debe ser "monocotiledóneas", "rosáceas" y "asteráceas"</li>
+<li>Para el segundo nivel de tu lista, elija dos familias para cada uno de los grupos anteriores (recuerda, las familias de plantas terminan en "-aceae" y sí, ¡los nombres son complicados y largos!)</li>
+<li>Para el tercer nivel, añade tantas especies de cultivos pertenecientes a cada familia como desees a la lista respectiva.</li>
+<li>Sugerencia: es más fácil hacer tus listas empezando por el nivel de familia y trabajando hacia arriba para añadir estas listas a las monocotiledóneas, las rosáceas y las asteráceas.</li>
+<li>Nombre tu lista general "mis_cultivos".</li>
+<li>Por último, imprime tu lista para poder ver los resultados</li>
+<li>Recuerda, no tengas miedo de añadir comentarios a tu código usando <code>#</code>.</li>
+</ul>
+<p>Utiliza este ejercicio para explorar las relaciones evolutivas de los cultivos dentro de las plantas con flor. También puedes buscar tu especie de cultivo favorita (la wikipedia es un gran recurso) y colocarla como corresponde en tu lista. Compartiremos y discutiremos los cultivos que elijas en clase.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#Coloca tu respuesta aquí</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Respuesta</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">### RESPUESTA ###</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">asparagaceae</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;esparrago&quot;</span><span class="p">,</span> <span class="s2">&quot;agave&quot;</span><span class="p">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">araceae</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;taro&quot;</span><span class="p">,</span> <span class="s2">&quot;malanga&quot;</span><span class="p">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">anacardiaceae</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;anacardos&quot;</span><span class="p">,</span> <span class="s2">&quot;pistaches&quot;</span><span class="p">]</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">malvaceae</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;algodon&quot;</span><span class="p">,</span> <span class="s2">&quot;quimbombo&quot;</span><span class="p">,</span> <span class="p">]</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">ericaceae</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;arandano&quot;</span><span class="p">,</span> <span class="s2">&quot;moras&quot;</span><span class="p">]</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">apiaceae</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;zanahoria&quot;</span><span class="p">,</span> <span class="s2">&quot;hinojo&quot;</span><span class="p">,</span> <span class="s2">&quot;cilantro&quot;</span><span class="p">]</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">monocotiledoneas</span> <span class="o">=</span> <span class="p">[</span><span class="n">asparagaceae</span><span class="p">,</span> <span class="n">araceae</span><span class="p">]</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">rosaceas</span> <span class="o">=</span> <span class="p">[</span><span class="n">anacardiaceae</span><span class="p">,</span> <span class="n">malvaceae</span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">asteraceas</span> <span class="o">=</span> <span class="p">[</span><span class="n">ericaceae</span><span class="p">,</span> <span class="n">apiaceae</span><span class="p">]</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">mis_cultivos</span> <span class="o">=</span> <span class="p">[</span><span class="n">monocotiledoneas</span><span class="p">,</span> <span class="n">rosaceas</span><span class="p">,</span> <span class="n">asteraceas</span><span class="p">]</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">mis_cultivos</span><span class="p">)</span>
+</span></code></pre></div>
+<p>[[['esparrago', 'agave'], ['taro', 'malanga']], [['anacardos', 'pistaches'], ['algodon', 'quimbombo']], [['arandano', 'moras'], ['zanahoria', 'hinojo', 'cilantro']]]</p>
+</details>
+<p>Ahora, desde tu lista "mis_cultivos", seleccione su cultivo favorito utilizando la indexación e imprima su nombre. Recuerda: ¡tu lista tiene tres niveles!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Coloca tu respuesta aquí</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Respuesta</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">### RESPUESTA ###</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">mis_cultivos</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></div>
+<p>agave</p>
+</details>
+<hr />
+<h2 id="indice-del-clima">Índice del clima</h2>
+<p>Más arriba ha aprendido sobre la diversidad evolutiva de las plantas. Esta diversidad es intrínsecamente genética: las diferencias entre especies están codificadas en el ADN. Pero el medio ambiente también desempeña un papel en la determinación de lo que son las plantas. Los efectos del medio ambiente pueden ser a largo plazo, actuando a lo largo de períodos de tiempo geológicos en forma de presión de selección que impulsa la evolución. O bien, los efectos del clima pueden producirse en escalas de tiempo más pequeñas, durante la vida de una planta. La plasticidad se refiere a los efectos del medio ambiente en el cambio del fenotipo de un organismo, lo que es. Las plantas suelen ser muy sensibles a su entorno: la cantidad y calidad de luz que reciben, la competencia con otras plantas o la respuesta a los animales depredadores, y la temperatura.</p>
+<p>El cambio climático afecta a las plantas de muchas maneras. Estas responderán directamente a los factores abióticos afectados por el cambio climático, como la temperatura y las precipitaciones. Pero también responderán a los efectos indirectos del cambio climático que resultan en la transformación de ecosistemas enteros. El cambio climático es importante para nosotros de múltiples maneras, siendo las dos más obvias: 1) los efectos sobre los cultivos y otras plantas de las que dependemos para sobrevivir y 2) la pérdida de biodiversidad.</p>
+<p>Más adelante analizaremos los efectos a largo plazo del clima en los cultivos. Pero por ahora, utilicemos las habilidades de indexación que acabamos de aprender para observar algunas tendencias y también para obtener una vista previa de la visualización de datos que aprenderás en la próxima lección.</p>
+<p>En la celda de abajo, los valores de la anomalia de temperatura desde el año 1900 hasta el 2020 se proporcionan en una lista llamada <code>temp_anomaly</code>. Estos datos provienen de <a href="https://climate.nasa.gov/vital-signs/global-temperature/">NASA</a>. Ejecuta la celda de abajo para crear la lista:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">temp_anomaly</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.19</span><span class="p">,</span><span class="o">-</span><span class="mf">0.23</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="o">-</span><span class="mf">0.28</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="o">-</span><span class="mf">0.33</span><span class="p">,</span><span class="o">-</span><span class="mf">0.36</span><span class="p">,</span><span class="o">-</span><span class="mf">0.37</span><span class="p">,</span><span class="o">-</span><span class="mf">0.39</span><span class="p">,</span><span class="o">-</span><span class="mf">0.4</span><span class="p">,</span><span class="o">-</span><span class="mf">0.41</span><span class="p">,</span><span class="o">-</span><span class="mf">0.38</span><span class="p">,</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>                <span class="o">-</span><span class="mf">0.35</span><span class="p">,</span><span class="o">-</span><span class="mf">0.32</span><span class="p">,</span><span class="o">-</span><span class="mf">0.31</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span><span class="o">-</span><span class="mf">0.27</span><span class="p">,</span><span class="o">-</span><span class="mf">0.26</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="o">-</span><span class="mf">0.24</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                <span class="o">-</span><span class="mf">0.23</span><span class="p">,</span><span class="o">-</span><span class="mf">0.22</span><span class="p">,</span><span class="o">-</span><span class="mf">0.21</span><span class="p">,</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="o">-</span><span class="mf">0.19</span><span class="p">,</span><span class="o">-</span><span class="mf">0.19</span><span class="p">,</span><span class="o">-</span><span class="mf">0.19</span><span class="p">,</span><span class="o">-</span><span class="mf">0.19</span><span class="p">,</span><span class="o">-</span><span class="mf">0.18</span><span class="p">,</span><span class="o">-</span><span class="mf">0.17</span><span class="p">,</span><span class="o">-</span><span class="mf">0.16</span><span class="p">,</span><span class="o">-</span><span class="mf">0.14</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>                <span class="o">-</span><span class="mf">0.11</span><span class="p">,</span><span class="o">-</span><span class="mf">0.06</span><span class="p">,</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.03</span><span class="p">,</span><span class="mf">0.06</span><span class="p">,</span><span class="mf">0.09</span><span class="p">,</span><span class="mf">0.11</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.07</span><span class="p">,</span><span class="mf">0.04</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.04</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span><span class="o">-</span><span class="mf">0.08</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                <span class="o">-</span><span class="mf">0.08</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span><span class="o">-</span><span class="mf">0.06</span><span class="p">,</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.04</span><span class="p">,</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.03</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>                <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="o">-</span><span class="mf">0.04</span><span class="p">,</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.06</span><span class="p">,</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">0.04</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>                <span class="mf">0.07</span><span class="p">,</span><span class="mf">0.12</span><span class="p">,</span><span class="mf">0.16</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.21</span><span class="p">,</span><span class="mf">0.22</span><span class="p">,</span><span class="mf">0.21</span><span class="p">,</span><span class="mf">0.21</span><span class="p">,</span><span class="mf">0.22</span><span class="p">,</span><span class="mf">0.24</span><span class="p">,</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.31</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.34</span><span class="p">,</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>                <span class="mf">0.33</span><span class="p">,</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">0.34</span><span class="p">,</span><span class="mf">0.34</span><span class="p">,</span><span class="mf">0.37</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.43</span><span class="p">,</span><span class="mf">0.45</span><span class="p">,</span><span class="mf">0.48</span><span class="p">,</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.53</span><span class="p">,</span><span class="mf">0.55</span><span class="p">,</span><span class="mf">0.59</span><span class="p">,</span><span class="mf">0.61</span><span class="p">,</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>                <span class="mf">0.62</span><span class="p">,</span><span class="mf">0.63</span><span class="p">,</span><span class="mf">0.64</span><span class="p">,</span><span class="mf">0.65</span><span class="p">,</span><span class="mf">0.65</span><span class="p">,</span><span class="mf">0.65</span><span class="p">,</span><span class="mf">0.67</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.74</span><span class="p">,</span><span class="mf">0.79</span><span class="p">,</span><span class="mf">0.83</span><span class="p">,</span><span class="mf">0.88</span><span class="p">,</span><span class="mf">0.91</span><span class="p">,</span><span class="mf">0.95</span><span class="p">,</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                <span class="mf">0.98</span><span class="p">,</span><span class="mf">1.01</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Si hay datos de 1900 a 2020, entonces debería haber 121 valores en la lista. Utilizando una función que hayas aprendido, comprueba la longitud de la lista <code>temp_anomaly</code> en la celda de abajo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Coloca tu respuesta aquí</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Respuesta</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">### RESPUESTA ###</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">len</span><span class="p">(</span><span class="n">temp_anomaly</span><span class="p">)</span>
+</span></code></pre></div>
+<p>121</p>
+</details>
+<p>A continuación, crea una lista llamada <code>mi_vida</code> utilizando la indexación que comienza en el año en que naciste y llega hasta el final de los datos proporcionados. Esta lista comienza con los datos de 1900, lo que es una pista sobre cómo indexar adecuadamente los datos. Crea tu lista a través de la indexación en la celda de abajo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Coloca tu respuesta aquí</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Respuesta</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">### RESPUESTA ###</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">mi_vida</span> <span class="o">=</span> <span class="n">temp_anomaly</span><span class="p">[</span><span class="mi">81</span><span class="p">:]</span>
+</span></code></pre></div>
+</details>
+<p>Comprueba la longitud de tu lista usando una función en la celda de abajo para asegurarte de que has indexado correctamente. ¡Debería estar cerca de la edad que tienes! (dependiendo del día de tu cumpleaños... ¡recuerda que esta lista sólo llega hasta el 2020!)</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">mi_vida</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>40
+</code></pre></div>
+<p>En la siguiente lección, aprenderemos a trazar y visualizar nuestros datos. Para ello, necesitaremos <em>importar</em> conjuntos de funciones llamados <em>módulos</em>. Como aprenderás en la siguiente lección, lo hacemos escribiendo <code>import</code>, el módulo que deseamos importar, y utilizando <code>as</code> para decir cómo nos gustaría referirnos al módulo en forma abreviada cuando lo usemos. Hay algunas otras líneas de código que utilizamos para que los gráficos que hacemos se muestren en línea en el cuaderno Jupyter. </p>
+<p>Ejecuta la celda de abajo para importar el módulo <code>matplotlib</code> y un submódulo <code>pyplot</code> para que podamos intentar trazar los datos de las anomalías de temperatura.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</span></code></pre></div>
+<p>Aprenderás más sobre cómo trazar los datos en la próxima lección, pero ahora vamos a intentar visualizar los cambios de la anomalía de la temperatura durante tu vida. La función <code>plot</code> de <code>matplotlib</code> toma una lista de números y los gráfica. En los paréntesis vacíos de abajo, saca tu lista <code>mi_vida</code> y sustituye la cadena por el título, la etiqueta del eje x y la etiqueta del eje y para crear un gráfico. Una vez que haya hecho los cambios en el código de abajo, sólo tiene que pulsar shift + Enter y deberá aparecer un gráfico en tu pantalla.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Coloca tu respuesta aquí</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="p">)</span> <span class="c1"># Ponga la lista con sus anomalías de temperatura en su vida aquí</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Título&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span> <span class="c1"># Ponga un título al gráfico</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Eje X&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="c1"># Ponga un nombre a su eje X</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Eje Y&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="c1"># Ponga un nombre a su eje Y</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Respuesta</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">### RESPUESTA ###</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mi_vida</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Anomalía de temperatura durante mi vida&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Año&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Anomalía de temperatura&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="png" src="../assets/prac_imgs/actividad1.png" /></p>
+</details>
+<p>¡Enhorabuena por tu primer gráfico en Python 🐍! Mira tu gráfico e interprétalo: ¿qué significa? En la próxima lección aprenderás a trazar más a fondo, pero por ahora, ¡eso es todo! </p>
+<p>Gracias por participar en esta actividad.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ES_1_practice/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Práctica">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Práctica
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ES_2.00_Ilustracion_de_portada_2/" class="md-footer__link md-footer__link--next" aria-label="Next: Ilustración de portada">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ilustración de portada
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan Chitwood, Alejandra Rougon-Cardoso, Robert VanBuren
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/@DanChitwood" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://plantsandpython.github.io/PlantsAndPython/00_Opening_page.html" target="_blank" rel="noopener" title="plantsandpython.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "announce.dismiss", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
