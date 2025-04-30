@@ -75,7 +75,7 @@ theme:
 # Page tree
 nav:
   - Welcome | Bienvenid@: 
-    - Home | Inicio: index.md
+    - Welcome | Bienvenid@: index.md
   - Getting started | Empezando:
     - Installation | Instalación: 00_Installing_Anaconda.md
     - Coding cells | celdas de código: 02_Coding_cells.md
