@@ -212,6 +212,9 @@ nav:
       - 7.2 Resumen de comandos: ES_7.2_Resumen_de_comandos.md
   - Class publications: 00_class_publications.md
 
+plugins:
+  - social
+
 markdown_extensions:
   - attr_list
   - md_in_html
