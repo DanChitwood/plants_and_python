@@ -15,6 +15,7 @@ copyright: Copyright &copy; 2025 Dan Chitwood, Alejandra Rougon-Cardoso, Robert 
 theme:
   name: material
   features:
+    - toc.integrate
     - announce.dismiss
     #- content.action.edit
     #- content.action.view
@@ -92,6 +93,8 @@ nav:
       - 1.6 List of lists: 1.6_List_of_Lists.md
       - 1.7 Slicing: 1.7_Slicing.md
       - 1.8 Data types: 1.8_Data_Types.md
+      - Practice: 1_practice.md
+      - Plants & climate: 1_activity.md
     - 2. Visualizing Data with Matplotlib:
       - Cover illustration: 2.00_Cover_image_2.md
       - 2.0 Modules: 2.0_Modules.md
@@ -153,6 +156,8 @@ nav:
       - 1.6 Lista de listas: ES_1.6_Lista_de_listas.md
       - 1.7 Rebanar: ES_1.7_Rebanar.md
       - 1.8 Tipos de datos: ES_1.8_Tipos_de_datos.md
+      - Práctica: ES_1_practice.md
+      - Las plantas y el clima: ES_1_activity.md
     - 2. Visualización de datos con matplotlib:
       - Ilustración de portada: ES_2.00_Ilustracion_de_portada_2.md
       - 2.0 Módulos: ES_2.0_Modulos.md
