@@ -1,4 +1,6 @@
-# Práctica con Variables, Funciones, Listas e Índices
+# Prática
+
+## Práctica con Variables, Funciones, Listas e Índices
 ________
 
 **¡Ahora inténtalo tú!**
